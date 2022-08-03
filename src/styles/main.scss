@@ -1,3 +1,140 @@
-img {
-  display: block;
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+$primary: #ffd438;
+$dark: #292b2f;
+$darker: #211f1f;
+$light: #f1f1f1;
+$lighter: #ffffff;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  width: 100%;
+  body {
+    color: $dark;
+    background-color: $lighter;
+    width: 100%;
+    height: 100%;
+    font-family: 'Lexend Deca', sans-serif;
+  }
+}
+
+a,
+a:hover,
+a:visited,
+a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+.header {
+  color: $dark;
+  background-color: $lighter;
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.15);
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1920px;
+    padding: 10px 5%;
+    margin: 0 auto;
+  }
+
+  &__title {
+    color: $primary;
+    text-shadow: 2px 2px 0px $dark;
+    letter-spacing: 0.05em;
+  }
+
+  &__nav {
+    color: $dark;
+    background-color: $primary;
+    position: absolute;
+    width: 100%;
+    top: 58px;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 44px;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.2s linear;
+    box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.15);
+    font-size: 1em;
+    font-weight: 600;
+
+    a {
+      &:hover {
+        text-decoration: underline $primary;
+        text-decoration-thickness: 3px;
+      }
+    }
+  }
+
+  .open-nav {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &__menu-icon {
+    background-color: $lighter;
+    border: 0;
+    cursor: pointer;
+
+    #menu-button,
+    #close-button {
+      font-size: 28px;
+    }
+  }
+
+  &__close-icon {
+    position: absolute;
+    z-index: 101;
+    margin-right: 18px;
+    font-size: 32px;
+    right: -100vw;
+  }
+}
+
+.main {
+  padding-top: 20px;
+  height: 200vh;
+}
+
+.hidden {
+  display: none;
+}
+
+@media screen and (min-width: 600px) {
+  .header {
+    &__nav {
+      background-color: $lighter;
+      box-shadow: none;
+      position: static;
+      visibility: visible;
+      opacity: 1;
+      justify-content: flex-end;
+
+      & > a {
+        margin-left: 32px;
+        font-size: 1.1em;
+      }
+    }
+
+    &__menu-icon {
+      display: none;
+    }
+  }
 }
