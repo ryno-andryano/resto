@@ -1,10 +1,12 @@
 import onToggleMenuHandler from './handlers/onToggleMenuHandler';
-import onLoadRestaurantHandler from './handlers/onLoadRestaurantHandler';
+import onRenderRestaurantHandler from './handlers/onRenderRestaurantHandler';
+import onRenderFactHandler from './handlers/onRenderFactHandler';
 
 import DATA from '../DATA.json';
-const {restaurants} = DATA;
+const {restaurants, fact} = DATA;
 
 $(() => {
   $('.header__menu-icon').on('click', onToggleMenuHandler);
-  onLoadRestaurantHandler(restaurants);
+  onRenderRestaurantHandler(restaurants);
+  onRenderFactHandler(fact);
 });

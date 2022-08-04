@@ -1,4 +1,4 @@
-const onLoadRestaurantHandler = (restaurants) => {
+const onRenderRestaurantHandler = (restaurants) => {
   const renderRestaurants = restaurants.map((restaurant) => {
     return `<li class="restaurant-item">
       <img
@@ -8,7 +8,7 @@ const onLoadRestaurantHandler = (restaurants) => {
       />
       <span class="restaurant-item__city">${restaurant.city}</span>
       <h3 class="restaurant-item__name">${restaurant.name}</h3>
-      <span class="restaurant-item__rating">Rating: ${restaurant.rating}</span>
+      <div class="restaurant-item__rating">Rating: ${restaurant.rating}</div>
       <p class="restaurant-item__description">${restaurant.description}</p>
     </li>`;
   });
@@ -16,4 +16,4 @@ const onLoadRestaurantHandler = (restaurants) => {
   $('.restaurant-list').append(renderRestaurants);
 };
 
-export default onLoadRestaurantHandler;
+export default onRenderRestaurantHandler;

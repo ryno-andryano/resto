@@ -72,5 +72,17 @@
       "city": "Malang",
       "rating": 3.9
     }
+  ],
+  "fact": [
+    "Broccoli contains more protein than steak!",
+    "Raspberries are a member of the rose family.",
+    "Potatoes were the first food planted in space.",
+    "Cucumbers are 95 percent water.",
+    "Pineapple plants can take two to three years to produce a fruit.",
+    "Cotton candy was created by a dentist.",
+    "Watermelon and bananas are berries, but strawberries are not!",
+    "Cashews grow on cashew apples.",
+    "Lemons float but limes sink.",
+    "The original carrots were purple and yellow, not orange."
   ]
 }

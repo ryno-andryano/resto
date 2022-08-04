@@ -3,7 +3,7 @@
 $primary: #ffd438;
 $dark: #292b2f;
 $darker: #211f1f;
-$grey: #6b6b6b;
+$grey: #777777;
 $light: #fafafa;
 $lighter: #ffffff;
 
@@ -150,22 +150,29 @@ a:active {
     font-weight: 500;
     font-size: 7vmin;
     line-height: 110%;
+
+    u {
+      text-decoration: underline $primary;
+    }
   }
 }
 
 .main {
   padding: 4vh 5% 4vh 5%;
 
+  h2 {
+    text-align: center;
+    margin-bottom: 28px;
+    font-size: 22px;
+  }
+
   .restaurant-section {
-    h2 {
-      text-align: center;
-      margin-bottom: 28px;
-      font-size: 28px;
-    }
     .restaurant-list {
       display: grid;
       grid-gap: 20px;
       grid-template-columns: 1fr;
+      margin-bottom: 28px;
+
       .restaurant-item {
         background-color: $lighter;
         position: relative;
@@ -195,9 +202,11 @@ a:active {
         }
 
         &__rating {
+          color: $grey;
           padding: 0 20px;
           font-weight: 400;
           font-size: 4vw;
+          text-align: center;
         }
 
         &__name {
@@ -208,6 +217,7 @@ a:active {
           text-overflow: ellipsis;
           overflow: hidden;
           white-space: nowrap;
+          text-align: center;
         }
 
         &__description {
@@ -218,13 +228,41 @@ a:active {
       }
     }
   }
+
+  .random-fact {
+    background: linear-gradient(
+        rgba(255, 212, 56, 0.5),
+        rgba(255, 212, 56, 0.5)
+      ),
+      url('../public/images/pattern.jpg');
+    box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.15);
+    background-size: cover;
+    border-radius: 20px;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    .fact {
+      width: 100%;
+      h2 {
+        margin: 0 0 6px;
+      }
+      p {
+        font-family: 'Lexend Deca', sans-serif;
+        font-size: 17px;
+        padding: 0 10%;
+      }
+    }
+  }
 }
 
 .footer {
   background-color: $dark;
   color: $primary;
   width: 100%;
-  min-height: 40px;
+  min-height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -236,7 +274,7 @@ a:active {
 @media screen and (min-width: 720px) {
   .header {
     &__nav {
-      background-color: $lighter;
+      background-color: $light;
       box-shadow: none;
       position: static;
       visibility: visible;
@@ -263,6 +301,9 @@ a:active {
   }
 
   .main {
+    h2 {
+      font-size: 28px;
+    }
     .restaurant-section {
       .restaurant-list {
         grid-template-columns: 1fr 1fr;
@@ -290,6 +331,15 @@ a:active {
         }
       }
     }
+
+    .random-fact {
+      min-height: 180px;
+      .fact {
+        p {
+          font-size: 22px;
+        }
+      }
+    }
   }
 }
 
@@ -313,6 +363,11 @@ a:active {
   .main {
     max-width: 1600px;
     margin: 0 auto;
+
+    h2 {
+      font-size: 34px;
+    }
+
     .restaurant-section {
       .restaurant-list {
         grid-template-columns: 1fr 1fr 1fr;
@@ -337,6 +392,15 @@ a:active {
             padding: 0 30px 30px;
             font-size: 14.4px;
           }
+        }
+      }
+    }
+
+    .random-fact {
+      min-height: 220px;
+      .fact {
+        p {
+          font-size: 30px;
         }
       }
     }
