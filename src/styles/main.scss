@@ -114,7 +114,7 @@ a:active {
 
     #menu-button,
     #close-button {
-      color: $grey;
+      color: $dark;
       font-size: 36px;
       padding: 4px;
     }
@@ -220,6 +220,19 @@ a:active {
   }
 }
 
+.footer {
+  background-color: $dark;
+  color: $primary;
+  width: 100%;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .footer-inner {
+    text-align: center;
+  }
+}
+
 @media screen and (min-width: 720px) {
   .header {
     &__nav {
@@ -255,23 +268,23 @@ a:active {
         grid-template-columns: 1fr 1fr;
 
         .restaurant-item {
-          // &__picture {
-          //   height: 30vh;
-          // }
-
           &__city {
             font-size: 2vw;
           }
 
           &__rating {
+            padding: 0 24px;
             font-size: 2vw;
           }
 
           &__name {
+            padding: 0 24px;
+            margin-top: 16px;
             font-size: 3.15vw;
           }
 
           &__description {
+            padding: 0 24px 24px;
             font-size: 1.8vw;
           }
         }
@@ -310,14 +323,18 @@ a:active {
           }
 
           &__rating {
+            padding: 0 30px;
             font-size: 16.08px;
           }
 
           &__name {
+            padding: 0 30px;
+            margin-top: 20px;
             font-size: 25.2px;
           }
 
           &__description {
+            padding: 0 30px 30px;
             font-size: 14.4px;
           }
         }
