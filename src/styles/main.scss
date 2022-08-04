@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Lexend+Deca:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 $primary: #ffd438;
 $dark: #292b2f;
 $darker: #211f1f;
-$grey: #b4b4b4;
-$light: #f1f1f1;
+$grey: #6b6b6b;
+$light: #fafafa;
 $lighter: #ffffff;
 
 * {
@@ -17,10 +17,14 @@ html {
   width: 100%;
   body {
     color: $dark;
-    background-color: $lighter;
+    background-color: $light;
     width: 100%;
     height: 100%;
     font-family: 'Lexend Deca', sans-serif;
+
+    p {
+      font-family: 'Karla', sans-serif;
+    }
   }
 }
 
@@ -38,7 +42,7 @@ a:active {
 
 .header {
   color: $dark;
-  background-color: $lighter;
+  background-color: $light;
   width: 100%;
   position: fixed;
   z-index: 10;
@@ -69,13 +73,6 @@ a:active {
     transform: translateY(-50%);
     padding: 0 3px;
   }
-
-  // &__title {
-  //   color: $primary;
-  //   text-shadow: 2px 2px 0px $dark;
-  //   letter-spacing: 0.05em;
-  //   font-size: 2.2em;
-  // }
 
   &__nav {
     color: $dark;
@@ -111,7 +108,7 @@ a:active {
   }
 
   &__menu-icon {
-    background-color: $lighter;
+    background-color: $light;
     border: 0;
     cursor: pointer;
 
@@ -132,7 +129,7 @@ a:active {
   }
 }
 
-.hero {
+.hero-section {
   margin-top: 60px;
   padding: 0 5%;
   min-width: 100%;
@@ -157,12 +154,59 @@ a:active {
 }
 
 .main {
-  padding: 4vh 5% 0 5%;
-  min-height: 200vh;
+  padding: 4vh 5% 4vh 5%;
 
-  h2 {
-    text-align: center;
-    margin-bottom: 18px;
+  .restaurant-section {
+    h2 {
+      text-align: center;
+      margin-bottom: 18px;
+    }
+    .restaurant-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      .restaurant-item {
+        background-color: $lighter;
+        position: relative;
+        list-style-type: none;
+        border-radius: 12px;
+        box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.15);
+
+        &__picture {
+          max-width: 100%;
+          border-radius: 12px 12px 0 0;
+        }
+
+        &__city {
+          display: inline-block;
+          background-color: $primary;
+          padding: 8px 14px;
+          border-radius: 0 6px 6px 0;
+          position: absolute;
+          left: 0;
+          top: 16px;
+          font-weight: 600;
+          font-size: 4vw;
+        }
+
+        &__rating {
+          padding: 0 20px;
+          font-weight: 600;
+          font-size: 4vw;
+        }
+
+        &__name {
+          margin-top: 10px;
+          padding: 0 20px;
+          font-size: 7.2vw;
+        }
+
+        &__description {
+          margin-top: 10px;
+          padding: 0 20px 20px;
+          font-size: 3.6vw;
+        }
+      }
+    }
   }
 }
 
@@ -188,16 +232,42 @@ a:active {
     }
   }
 
-  .hero {
+  .hero-section {
     min-height: 300px;
     h2 {
       font-size: 6vmin;
     }
   }
+
+  .main {
+    .restaurant-section {
+      .restaurant-list {
+        grid-template-columns: 1fr 1fr;
+
+        .restaurant-item {
+          &__city {
+            font-size: 2vw;
+          }
+
+          &__rating {
+            font-size: 2vw;
+          }
+
+          &__name {
+            font-size: 3.6vw;
+          }
+
+          &__description {
+            font-size: 1.8vw;
+          }
+        }
+      }
+    }
+  }
 }
 
 @media screen and (min-width: 920px) {
-  .hero {
+  .hero-section {
     min-height: 400px;
   }
 }
@@ -209,12 +279,35 @@ a:active {
     }
   }
 
-  .hero {
+  .hero-section {
     min-width: 1000px;
   }
 
   .main {
     max-width: 1600px;
     margin: 0 auto;
+    .restaurant-section {
+      .restaurant-list {
+        grid-template-columns: 1fr 1fr 1fr;
+
+        .restaurant-item {
+          &__city {
+            font-size: 1.34vw;
+          }
+
+          &__rating {
+            font-size: 1.34vw;
+          }
+
+          &__name {
+            font-size: 2.4vw;
+          }
+
+          &__description {
+            font-size: 1.2vw;
+          }
+        }
+      }
+    }
   }
 }
