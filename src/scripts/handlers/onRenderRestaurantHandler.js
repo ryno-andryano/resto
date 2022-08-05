@@ -3,7 +3,7 @@ const onRenderRestaurantHandler = (restaurants) => {
     return `<li class="restaurant-item">
       <img
         src="${restaurant.pictureId}"
-        alt="${restaurant.name}"
+        alt="${restaurant.name} Ambiance"
         class="restaurant-item__picture"
       />
       <span class="restaurant-item__city">${restaurant.city}</span>

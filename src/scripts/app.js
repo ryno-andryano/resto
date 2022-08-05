@@ -9,4 +9,7 @@ $(() => {
   $('.header__menu-icon').on('click', onToggleMenuHandler);
   onRenderRestaurantHandler(restaurants);
   onRenderFactHandler(fact);
+  $('.change-fact-button').on('click', () => {
+    onRenderFactHandler(fact);
+  });
 });
