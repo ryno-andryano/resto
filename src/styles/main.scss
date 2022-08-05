@@ -45,10 +45,14 @@ html {
     .hidden {
       display: none;
     }
+
+    .spin {
+      transform: rotate(540deg);
+    }
   }
 }
 
-#skip-link {
+.skip-link {
   position: absolute;
   top: -40px;
   left: 4px;
@@ -90,6 +94,7 @@ html {
       display: flex;
       justify-content: center;
       align-items: center;
+      padding: 6px 0;
 
       img {
         max-height: 34px;
@@ -119,6 +124,7 @@ html {
 
     a {
       padding: 12px;
+
       &:hover {
         text-decoration: underline $primary;
         text-decoration-thickness: 3px;
@@ -131,7 +137,7 @@ html {
     opacity: 1;
   }
 
-  &__menu-icon {
+  &__menu-button {
     background: none;
     border: none;
     cursor: pointer;
@@ -168,7 +174,7 @@ html {
   justify-content: center;
   text-align: center;
 
-  h2 {
+  &__caption {
     color: $light;
     font-weight: 500;
     font-size: 7vmin;
@@ -189,8 +195,8 @@ html {
     font-size: 22px;
   }
 
-  .restaurant-section {
-    .restaurant-list {
+  .restaurant {
+    &__list {
       display: grid;
       grid-gap: 20px;
       grid-template-columns: 1fr;
@@ -235,7 +241,7 @@ html {
           justify-content: center;
           margin-top: 4px;
 
-          .star-icon {
+          &-icon {
             color: $primary;
             font-size: 5vw;
             margin-right: 4px;
@@ -262,7 +268,7 @@ html {
     }
   }
 
-  .random-fact {
+  .food-facts {
     background: linear-gradient(
         rgba(255, 212, 56, 0.5),
         rgba(255, 212, 56, 0.5)
@@ -271,20 +277,20 @@ html {
     box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.15);
     background-size: cover;
     border-radius: 20px;
-    min-height: 150px;
+    min-height: 160px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     position: relative;
 
-    .fact {
+    &__wrapper {
       width: 100%;
 
-      .change-fact-button {
+      .food-facts__shuffle-button {
         position: absolute;
-        top: 0;
-        right: 0;
+        top: -4px;
+        right: -4px;
         background: none;
         border: none;
         cursor: pointer;
@@ -295,17 +301,13 @@ html {
           color: $dark;
           transition: transform 1s ease-in-out;
         }
-
-        .spin {
-          transform: rotate(540deg);
-        }
       }
 
       h2 {
         margin: 0 0 6px;
       }
 
-      p {
+      .food-facts__fact {
         font-family: 'Lexend Deca', sans-serif;
         font-size: 17px;
         padding: 0 10%;
@@ -322,7 +324,7 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  .footer-inner {
+  &__inner {
     text-align: center;
   }
 }
@@ -344,14 +346,14 @@ html {
       }
     }
 
-    &__menu-icon {
+    &__menu-button {
       display: none;
     }
   }
 
   .hero-section {
     min-height: 360px;
-    h2 {
+    &__caption {
       font-size: 6vmin;
     }
   }
@@ -361,8 +363,8 @@ html {
       margin-bottom: 28px;
       font-size: 28px;
     }
-    .restaurant-section {
-      .restaurant-list {
+    .restaurant {
+      &__list {
         grid-template-columns: 1fr 1fr;
 
         .restaurant-item {
@@ -373,7 +375,7 @@ html {
           &__rating {
             padding: 0 24px;
             font-size: 2vw;
-            .star-icon {
+            &-icon {
               font-size: 2.5vw;
             }
           }
@@ -392,10 +394,10 @@ html {
       }
     }
 
-    .random-fact {
+    .food-facts {
       min-height: 180px;
-      .fact {
-        .change-fact-button {
+      &__wrapper {
+        .food-facts__shuffle-button {
           top: 8px;
           right: 8px;
 
@@ -404,7 +406,7 @@ html {
           }
         }
 
-        p {
+        .food-facts__fact {
           font-size: 22px;
         }
       }
@@ -432,8 +434,8 @@ html {
       font-size: 34px;
     }
 
-    .restaurant-section {
-      .restaurant-list {
+    .restaurant {
+      &__list {
         grid-template-columns: 1fr 1fr 1fr;
 
         .restaurant-item {
@@ -444,7 +446,7 @@ html {
           &__rating {
             padding: 0 30px;
             font-size: 16.08px;
-            .star-icon {
+            &-icon {
               font-size: 20px;
             }
           }
@@ -463,17 +465,17 @@ html {
       }
     }
 
-    .random-fact {
+    .food-facts {
       min-height: 220px;
-      .fact {
-        .change-fact-button {
+      &__wrapper {
+        .food-facts__shuffle-button {
           top: 10px;
           right: 10px;
           i {
             font-size: 40px;
           }
         }
-        p {
+        .food-facts__fact {
           font-size: 30px;
         }
       }

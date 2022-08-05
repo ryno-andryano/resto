@@ -6,10 +6,10 @@ import DATA from '../DATA.json';
 const {restaurants, fact} = DATA;
 
 $(() => {
-  $('.header__menu-icon').on('click', onToggleMenuHandler);
+  $('.header__menu-button').on('click', onToggleMenuHandler);
   onRenderRestaurantHandler(restaurants);
   onRenderFactHandler(fact);
-  $('.change-fact-button').on('click', () => {
+  $('.food-facts__shuffle-button').on('click', () => {
     onRenderFactHandler(fact);
   });
 });
