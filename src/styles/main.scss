@@ -207,6 +207,16 @@ a:active {
           font-weight: 400;
           font-size: 4vw;
           text-align: center;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-top: 4px;
+
+          .star-icon {
+            color: $primary;
+            font-size: 5vw;
+            margin-right: 4px;
+          }
         }
 
         &__name {
@@ -316,6 +326,9 @@ a:active {
           &__rating {
             padding: 0 24px;
             font-size: 2vw;
+            .star-icon {
+              font-size: 2.5vw;
+            }
           }
 
           &__name {
@@ -380,6 +393,9 @@ a:active {
           &__rating {
             padding: 0 30px;
             font-size: 16.08px;
+            .star-icon {
+              font-size: 20px;
+            }
           }
 
           &__name {
