@@ -1,6 +1,6 @@
-const onRenderFactHandler = (fact) => {
+const onRenderFactHandler = (facts) => {
   const renderFact = () => {
-    return fact[Math.floor(Math.random() * fact.length)];
+    return facts[Math.floor(Math.random() * facts.length)];
   };
 
   $('.food-facts__shuffle-button i').toggleClass('spin');

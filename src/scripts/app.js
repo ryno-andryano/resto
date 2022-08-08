@@ -3,13 +3,13 @@ import onRenderRestaurantHandler from './handlers/onRenderRestaurantHandler';
 import onRenderFactHandler from './handlers/onRenderFactHandler';
 
 import DATA from '../DATA.json';
-const {restaurants, fact} = DATA;
+const {restaurants, facts} = DATA;
 
 $(() => {
   $('.header__menu-button').on('click', onToggleMenuHandler);
   onRenderRestaurantHandler(restaurants);
-  onRenderFactHandler(fact);
+  onRenderFactHandler(facts);
   $('.food-facts__shuffle-button').on('click', () => {
-    onRenderFactHandler(fact);
+    onRenderFactHandler(facts);
   });
 });

@@ -1,20 +1,22 @@
 const onRenderRestaurantHandler = (restaurants) => {
-  const renderRestaurants = restaurants.map((restaurant) => {
-    return `<li class="restaurant-item">
+  const renderRestaurants = restaurants.map(
+    ({pictureId, name, city, rating, description}) => {
+      return `<li class="restaurant-item">
       <img
-        src="${restaurant.pictureId}"
-        alt="${restaurant.name}'s Ambiance"
+        src="${pictureId}"
+        alt="${name}'s Ambiance"
         class="restaurant-item__picture"
       />
-      <span class="restaurant-item__city">${restaurant.city}</span>
-      <h3 class="restaurant-item__name">${restaurant.name}</h3>
+      <span class="restaurant-item__city">${city}</span>
+      <h3 class="restaurant-item__name">${name}</h3>
       <div class="restaurant-item__rating">
         <i class="material-icons restaurant-item__rating-icon">star</i>
-        <span>${restaurant.rating}/5</span>
+        <span>${rating}/5</span>
       </div>
-      <p class="restaurant-item__description">${restaurant.description}</p>
+      <p class="restaurant-item__description">${description}</p>
     </li>`;
-  });
+    }
+  );
 
   $('.restaurant__list').append(renderRestaurants);
 };
