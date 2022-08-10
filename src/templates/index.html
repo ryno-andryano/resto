@@ -14,70 +14,33 @@
   <body>
     <a href="#main" class="skip-link">Skip to Content</a>
 
-    <header class="header">
-      <div class="header__inner">
-        <h1 class="header__logo">
-          <a href="/">
-            <img src="./images/logo-long.png" alt="Resto Logo" />
-          </a>
-        </h1>
+    <header-component></header-component>
 
-        <button class="header__menu-button">
-          <i
-            id="menu-button"
-            class="material-icons"
-            title="Open Menu"
-            aria-label="Open Menu"
-            >menu</i
-          >
-          <i
-            id="close-button"
-            class="material-icons hidden"
-            title="Close Menu"
-            aria-label="Close Menu"
-            >close</i
-          >
-        </button>
+    <div id="root" style="min-height: 95vh">
+      <!-- <hero-component></hero-component> -->
 
-        <nav class="header__nav">
-          <a href="/">Home</a>
-          <a href="#">Favorite</a>
-          <a href="https://github.com/ryno-andryano" target="_blank"
-            >About Us</a
-          >
-        </nav>
-      </div>
-    </header>
+      <main id="main" class="main" style="padding: 0">
+        <!-- <section class="restaurant">
+          <h2>Explore Restaurants</h2>
+          <ul class="restaurant__list"></ul>
+        </section>
+  
+        <section class="food-facts">
+          <div class="food-facts__wrapper">
+            <button
+              class="food-facts__shuffle-button"
+              title="Shuffle Fact"
+              aria-label="Shuffle Fact"
+            >
+              <i class="material-icons">change_circle</i>
+            </button>
+            <h2>Random Food Facts</h2>
+            <p class="food-facts__fact"></p>
+          </div>
+        </section> -->
+      </main>
+    </div>
 
-    <section class="hero-section" title="Hero Image">
-      <h2 class="hero-section__caption">
-        Find The Most Popular<br /><u>Restaurants</u> Near You
-      </h2>
-    </section>
-
-    <main id="main" class="main">
-      <section class="restaurant">
-        <h2>Explore Restaurants</h2>
-        <ul class="restaurant__list"></ul>
-      </section>
-
-      <section class="food-facts">
-        <div class="food-facts__wrapper">
-          <button
-            class="food-facts__shuffle-button"
-            title="Shuffle Fact"
-            aria-label="Shuffle Fact"
-          >
-            <i class="material-icons">change_circle</i>
-          </button>
-          <h2>Random Food Facts</h2>
-          <p class="food-facts__fact"></p>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <div class="footer__inner">Copyright © 2022 - RESTO</div>
-    </footer>
+    <footer-component></footer-component>
   </body>
 </html>
