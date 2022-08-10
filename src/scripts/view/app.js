@@ -1,7 +1,10 @@
 import './components/header-component';
 import './components/hero-component';
 import './components/footer-component';
+import './components/explore-component';
 import MenuInitiator from '../utils/menu-initiator';
+import UrlParser from '../routes/url-parser';
+import routes from '../routes/routes';
 
 class App {
   constructor({button, menuIcon, closeIcon, nav, content}) {
@@ -10,19 +13,24 @@ class App {
     this._closeIcon = closeIcon;
     this._nav = nav;
     this._content = content;
-    console.log(this._button);
 
     this._initialAppShell();
   }
 
   _initialAppShell() {
-    console.log(this._button);
     MenuInitiator.init({
       button: this._button,
       menuIcon: this._menuIcon,
       closeIcon: this._closeIcon,
       nav: this._nav,
     });
+  }
+
+  async renderPage() {
+    const url = UrlParser.parseActiveUrlWithCombiner();
+    const page = routes[url];
+    this._content.innerHTML = await page.render();
+    await page.afterRender();
   }
 }
 

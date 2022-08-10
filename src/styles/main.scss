@@ -49,6 +49,11 @@ html {
     .spin {
       transform: rotate(540deg);
     }
+
+    #root {
+      margin-top: 70px;
+      min-height: 94.3vh;
+    }
   }
 }
 
@@ -159,7 +164,6 @@ html {
 }
 
 .hero-section {
-  margin-top: 60px;
   padding: 0 5%;
   min-width: 100%;
   min-height: 200px;
@@ -218,9 +222,19 @@ html {
         }
 
         &__city {
-          display: inline-block;
+          color: $grey;
+          font-weight: 400;
+          font-size: 4vw;
+          text-align: center;
+          padding: 0 20px;
+        }
+
+        &__rating {
+          display: flex;
+          align-items: center;
+          justify-content: center;
           background-color: $primary;
-          padding: 8px 14px;
+          padding: 8px 10px;
           border-radius: 0 6px 6px 0;
           position: absolute;
           left: 0;
@@ -228,23 +242,11 @@ html {
           font-weight: 600;
           font-size: 4vw;
           box-shadow: 2px 0px 3px 1px rgba(0, 0, 0, 0.25);
-        }
-
-        &__rating {
-          color: $grey;
-          padding: 0 20px;
-          font-weight: 400;
-          font-size: 4vw;
-          text-align: center;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          margin-top: 4px;
 
           &-icon {
-            color: $primary;
+            color: $dark;
             font-size: 5vw;
-            margin-right: 4px;
+            margin-right: 2px;
           }
         }
 
@@ -370,10 +372,10 @@ html {
         .restaurant-item {
           &__city {
             font-size: 2vw;
+            padding: 0 24px;
           }
 
           &__rating {
-            padding: 0 24px;
             font-size: 2vw;
             &-icon {
               font-size: 2.5vw;
@@ -441,10 +443,10 @@ html {
         .restaurant-item {
           &__city {
             font-size: 16.08px;
+            padding: 0 30px;
           }
 
           &__rating {
-            padding: 0 30px;
             font-size: 16.08px;
             &-icon {
               font-size: 20px;

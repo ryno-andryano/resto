@@ -9,6 +9,14 @@ $(() => {
     menuIcon: $('#menu-button')[0],
     closeIcon: $('#close-button')[0],
     nav: $('.header__nav')[0],
-    content: $('#main')[0],
+    content: $('#root')[0],
+  });
+
+  window.addEventListener('hashchange', () => {
+    app.renderPage();
+  });
+
+  window.addEventListener('load', () => {
+    app.renderPage();
   });
 });
