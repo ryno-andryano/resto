@@ -37,7 +37,9 @@ html {
     }
 
     a:focus-visible,
-    button:focus-visible {
+    button:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible {
       border: 2px solid $primary;
       outline: 1px solid $dark;
     }
@@ -61,8 +63,8 @@ html {
   position: absolute;
   top: -40px;
   left: 4px;
-  background-color: $darker;
-  color: $light;
+  background-color: $light;
+  color: $dark;
   padding: 8px;
   z-index: 2;
 
@@ -191,7 +193,8 @@ html {
 }
 
 .main {
-  padding: 4vh 5% 4vh 5%;
+  padding: 3vh 5% 3vh 5%;
+  min-height: calc(100vh - 118px);
 
   h2 {
     text-align: center;
@@ -316,6 +319,133 @@ html {
       }
     }
   }
+
+  .detail {
+    h3 {
+      text-align: center;
+      font-size: 5vw;
+    }
+
+    &__image {
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.15);
+    }
+
+    &__name {
+      margin: 20px 0 0;
+    }
+
+    &__address {
+      text-align: center;
+      font-style: normal;
+    }
+
+    &__description {
+      font-size: 4vw;
+      margin-top: 20px;
+    }
+
+    &__foods {
+      margin-top: 20px;
+      font-size: 4vw;
+      text-transform: capitalize;
+    }
+
+    &__drinks {
+      margin-top: 12px;
+      font-size: 4vw;
+      text-transform: capitalize;
+    }
+
+    &__review {
+      margin-top: 28px;
+    }
+
+    &__review-list {
+      margin-top: 12px;
+    }
+
+    &__review-item {
+      background-color: $lighter;
+      list-style-type: none;
+      border-radius: 12px;
+      box-shadow: 0px 1px 4px 2px rgba(0, 0, 0, 0.15);
+      padding: 20px 16px;
+      text-align: center;
+      margin-top: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__review-name {
+      font-size: 4.8vw;
+      font-weight: 500;
+    }
+
+    &__review-text {
+      margin: 4px 0;
+      font-size: 4vw;
+    }
+
+    &__review-time {
+      font-family: 'Karla', sans-serif;
+      color: $grey;
+      font-size: 3.8vw;
+    }
+
+    &__add-review {
+      margin-top: 28px;
+    }
+
+    &__review-form {
+      background-color: $lighter;
+      border-radius: 12px;
+      box-shadow: 0px 1px 4px 2px rgba(0, 0, 0, 0.15);
+      padding: 20px;
+      margin-top: 12px;
+
+      label,
+      input,
+      textarea {
+        display: block;
+        width: 100%;
+      }
+
+      label {
+        font-size: 4.8vw;
+        margin-bottom: 4px;
+      }
+
+      input,
+      textarea {
+        margin-bottom: 12px;
+        padding: 8px;
+        resize: none;
+        font-size: 4vw;
+      }
+    }
+
+    &__submit-button {
+      width: 100%;
+      margin-top: 6px;
+      padding: 12px 16px;
+      border: 0;
+      border-radius: 6px;
+      background-color: $primary;
+      color: $dark;
+      font-weight: 600;
+      box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.15);
+      cursor: pointer;
+      font-size: 4.8vw;
+      font-family: 'Lexend Deca', sans-serif;
+    }
+
+    &__submit-button:hover {
+      background-color: #e6bf33;
+    }
+  }
 }
 
 .footer {
@@ -413,6 +543,70 @@ html {
         }
       }
     }
+
+    .detail {
+      h3 {
+        font-size: 3.75vw;
+      }
+
+      &__review {
+        margin-top: 24px;
+      }
+
+      &__review-list {
+        margin-top: 12px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      &__review-item {
+        width: 48%;
+        margin: 0 1% 12px;
+      }
+
+      &__description {
+        font-size: 3.2vw;
+      }
+
+      &__foods {
+        font-size: 3.2vw;
+      }
+
+      &__drinks {
+        font-size: 3.2vw;
+        margin-top: 12px;
+      }
+
+      &__review-name {
+        font-size: 2.4vw;
+      }
+
+      &__review-text {
+        font-size: 2.2vw;
+      }
+
+      &__review-time {
+        font-size: 1.9vw;
+      }
+
+      &__review-form {
+        margin: 16px auto 0;
+        max-width: 720px;
+
+        label {
+          font-size: 2.4vw;
+        }
+
+        input,
+        textarea {
+          font-size: 2.2vw;
+        }
+      }
+
+      &__submit-button {
+        font-size: 2.4vw;
+      }
+    }
   }
 }
 
@@ -480,6 +674,93 @@ html {
         .food-facts__fact {
           font-size: 30px;
         }
+      }
+    }
+
+    .detail {
+      h3 {
+        font-size: 30px;
+      }
+
+      &__head {
+        display: grid;
+        grid-gap: 40px;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      &__name {
+        margin-top: 0;
+        text-align: left;
+      }
+
+      &__address {
+        text-align: left;
+        font-size: 1.34vw;
+      }
+
+      &__image {
+        width: 100%;
+      }
+
+      &__foods,
+      &__drinks,
+      &__description {
+        font-size: 1.25vw;
+      }
+
+      &__review {
+        margin-top: 48px;
+      }
+
+      &__review-item {
+        width: 32%;
+        margin: 0 0.66% 18px;
+      }
+
+      &__review-name {
+        font-size: 19.2px;
+      }
+
+      &__review-text {
+        font-size: 17px;
+      }
+
+      &__review-time {
+        font-size: 15px;
+      }
+
+      &__review-form {
+        padding: 28px;
+
+        label {
+          font-size: 19.2px;
+        }
+
+        input,
+        textarea {
+          font-size: 17px;
+        }
+      }
+
+      &__submit-button {
+        font-size: 19.2px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .main {
+    padding: 6vh 5% 6vh 5%;
+    .detail {
+      &__address {
+        font-size: 20px;
+      }
+
+      &__foods,
+      &__drinks,
+      &__description {
+        font-size: 20px;
       }
     }
   }
