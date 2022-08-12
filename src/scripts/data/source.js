@@ -10,7 +10,8 @@ class DicodingRestaurantSource {
 
   static async detailRestaurant(id) {
     const response = await fetch(API_ENDPOINT.DETAIL(id));
-    return response.json();
+    const {restaurant} = await response.json();
+    return restaurant;
   }
 }
 

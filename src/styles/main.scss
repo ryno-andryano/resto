@@ -262,6 +262,14 @@ html {
           overflow: hidden;
           white-space: nowrap;
           text-align: center;
+
+          a:hover,
+          a:focus-visible {
+            text-decoration: underline $primary;
+            text-decoration-thickness: 3px;
+            border: none;
+            outline: none;
+          }
         }
 
         &__description {
@@ -682,7 +690,7 @@ html {
         font-size: 30px;
       }
 
-      &__head {
+      &__wrapper {
         display: grid;
         grid-gap: 40px;
         grid-template-columns: 1fr 1fr;

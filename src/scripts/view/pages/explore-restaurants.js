@@ -1,5 +1,5 @@
 import DicodingRestaurantSource from '../../data/source';
-import createRestaurantItemTemplate from '../templates/template';
+import {createRestaurantItemTemplate} from '../templates/template';
 
 const ExploreRestaurants = {
   async render() {
