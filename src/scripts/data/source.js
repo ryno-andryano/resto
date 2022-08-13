@@ -13,6 +13,18 @@ class DicodingRestaurantSource {
     const {restaurant} = await response.json();
     return restaurant;
   }
+
+  static async addReview(formValue) {
+    const rawResponse = await fetch(API_ENDPOINT.REVIEW, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formValue),
+    });
+    const response = await rawResponse.json();
+    console.log(response.message);
+  }
 }
 
 export default DicodingRestaurantSource;

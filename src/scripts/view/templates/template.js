@@ -26,6 +26,31 @@ const createRestaurantItemTemplate = ({
       </li>
 `;
 
+const currentDate = new Date().toLocaleDateString(
+  ('id-ID', {year: 'numeric', month: 'long', day: 'numeric'}),
+);
+const createNewReviewTemplate = ({name, review, date = currentDate}) => {
+  return `
+    <li class="detail__review-item">
+      <div class="detail__review-wrapper">
+        <div class="detail__review-name">${name}</div>
+        <p class="detail__review-text">
+          <q>${review}</q>
+        </p>
+        <time class="detail__review-time"">${date}</time>
+      </div>
+    </li>`;
+};
+
+const createReviewListTemplate = ({customerReviews}) => {
+  let reviewList = '';
+  customerReviews.forEach((customerReview) => {
+    reviewList += createNewReviewTemplate(customerReview);
+  });
+
+  return reviewList;
+};
+
 const createRestaurantDetailTemplate = ({
   name,
   description,
@@ -33,7 +58,6 @@ const createRestaurantDetailTemplate = ({
   address,
   pictureId,
   menus,
-  customerReviews,
 }) => {
   const foods = menus.foods.map((menu) => {
     return menu.name;
@@ -41,27 +65,6 @@ const createRestaurantDetailTemplate = ({
 
   const drinks = menus.drinks.map((menu) => {
     return menu.name;
-  });
-
-  const reviewList = customerReviews.map(({name, review, date}) => {
-    const formatedDate = new Date(date).toLocaleDateString('id-ID', {
-      year: 'numeric',
-      month: 'numeric',
-      day: 'numeric',
-    });
-
-    return `
-      <li class="detail__review-item">
-        <div class="detail__review-wrapper">
-          <div class="detail__review-name">${name}</div>
-          <p class="detail__review-text">
-            <q>${review}</q>
-          </p>
-          <time class="detail__review-time" datetime="${formatedDate}">
-            ${date}
-          </time>
-        </div>
-      </li>`;
   });
 
   return `
@@ -83,9 +86,13 @@ const createRestaurantDetailTemplate = ({
     <div class="detail__review">
       <h3>Customer Reviews</h3>
       <ul class="detail__review-list">
-        ${reviewList.join('')}
       </ul>
     </div>`;
 };
 
-export {createRestaurantItemTemplate, createRestaurantDetailTemplate};
+export {
+  createRestaurantItemTemplate,
+  createRestaurantDetailTemplate,
+  createNewReviewTemplate,
+  createReviewListTemplate,
+};
