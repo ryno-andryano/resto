@@ -13,7 +13,7 @@ class ExploreComponent extends HTMLElement {
           <ul class="restaurant__list"></ul>
         </section>
 
-        <!-- <section class="food-facts">
+        <section class="food-facts">
           <div class="food-facts__wrapper">
             <button
               class="food-facts__shuffle-button"
@@ -25,7 +25,7 @@ class ExploreComponent extends HTMLElement {
             <h2>Random Food Facts</h2>
             <p class="food-facts__fact"></p>
           </div>
-        </section> -->
+        </section>
       </main>`;
   }
 }
