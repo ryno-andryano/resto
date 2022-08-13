@@ -6,7 +6,7 @@ class DetailComponent extends HTMLElement {
   render() {
     this.innerHTML = `
       <main id="main" class="main">
-        <a href="/" class="back">
+        <a href="javascript:history.back()" class="back">
           <span class="back__wrapper">
             <i 
               id="back-icon" 

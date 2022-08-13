@@ -3,7 +3,7 @@ import RestaurantDetail from '../view/pages/restaurant-detail';
 import FavoriteRestaurants from '../view/pages/favorite-restaurants';
 
 const routes = {
-  '/': ExploreRestaurants, // default page
+  '/': ExploreRestaurants,
   '/home': ExploreRestaurants,
   '/detail/:id': RestaurantDetail,
   '/favorite': FavoriteRestaurants,
