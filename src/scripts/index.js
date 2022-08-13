@@ -2,6 +2,7 @@ import 'regenerator-runtime';
 import 'jquery';
 import '../styles/main.scss';
 import App from './view/app';
+import swRegister from './utils/sw-register';
 
 const app = new App({
   button: $('.header__menu-button')[0],
@@ -17,4 +18,5 @@ window.addEventListener('hashchange', () => {
 
 window.addEventListener('load', () => {
   app.renderPage();
+  swRegister();
 });
