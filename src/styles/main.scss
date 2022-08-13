@@ -54,7 +54,7 @@ html {
 
     #root {
       margin-top: 70px;
-      min-height: 94.3vh;
+      min-height: calc(100vh - 118px);
     }
   }
 }
@@ -124,7 +124,7 @@ html {
     min-height: 48px;
     visibility: hidden;
     opacity: 0;
-    transition: visibility 0s, opacity 0.2s linear;
+    transition: all 0.2s linear;
     box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.15);
     font-size: 1em;
     font-weight: 600;
@@ -194,12 +194,28 @@ html {
 
 .main {
   padding: 3vh 5% 3vh 5%;
-  min-height: calc(100vh - 118px);
 
   h2 {
     text-align: center;
     margin-bottom: 20px;
     font-size: 22px;
+  }
+
+  .back {
+    display: inline-block;
+    margin-bottom: 8px;
+
+    &__wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+      font-size: 14px;
+    }
+
+    i {
+      font-size: 14px;
+    }
   }
 
   .restaurant {
@@ -419,11 +435,13 @@ html {
       textarea {
         display: block;
         width: 100%;
+        font-family: 'Karla', sans-serif;
       }
 
       label {
         font-size: 4.8vw;
         margin-bottom: 4px;
+        font-weight: 600;
       }
 
       input,
@@ -450,7 +468,8 @@ html {
       font-family: 'Lexend Deca', sans-serif;
     }
 
-    &__submit-button:hover {
+    &__submit-button:hover,
+    &__submit-button:focus {
       background-color: #e6bf33;
     }
   }
@@ -503,6 +522,14 @@ html {
       margin-bottom: 28px;
       font-size: 28px;
     }
+
+    .back {
+      &__wrapper,
+      i {
+        font-size: 16px;
+      }
+    }
+
     .restaurant {
       &__list {
         grid-template-columns: 1fr 1fr;
@@ -638,6 +665,13 @@ html {
       font-size: 34px;
     }
 
+    .back {
+      &__wrapper,
+      i {
+        font-size: 18px;
+      }
+    }
+
     .restaurant {
       &__list {
         grid-template-columns: 1fr 1fr 1fr;
@@ -686,14 +720,14 @@ html {
     }
 
     .detail {
-      h3 {
-        font-size: 30px;
-      }
-
       &__wrapper {
         display: grid;
         grid-gap: 40px;
         grid-template-columns: 1fr 1fr;
+      }
+
+      h3 {
+        font-size: 30px;
       }
 
       &__name {

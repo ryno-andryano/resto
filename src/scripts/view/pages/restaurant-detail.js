@@ -12,9 +12,7 @@ const RestaurantDetail = {
   async afterRender() {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const restaurant = await DicodingRestaurantSource.detailRestaurant(url.id);
-    console.log(restaurant);
-    console.log(createRestaurantDetailTemplate(restaurant));
-    $('.detail').html(createRestaurantDetailTemplate(restaurant));
+    $('.detail').prepend(createRestaurantDetailTemplate(restaurant));
     window.scrollTo(0, 0);
   },
 };
