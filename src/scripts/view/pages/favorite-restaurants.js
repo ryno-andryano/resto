@@ -1,12 +1,22 @@
+import FavoriteRestaurantIdb from '../../data/favorite';
+import {createRestaurantItemTemplate} from '../templates/template';
+
 const FavoriteRestaurants = {
   async render() {
-    return `
-      <h2>Favorite Restaurants</h2>
-    `;
+    return `<favorite-component></favorite-component>`;
   },
 
   async afterRender() {
-    // Fungsi ini akan dipanggil setelah render()
+    const restaurants = await FavoriteRestaurantIdb.getAllRestaurants();
+    const root = $('.restaurant__list')[0];
+    if (restaurants == '') {
+      root.outerHTML =
+        '<p style="text-align: center">No restaurants found.</p>';
+    } else {
+      restaurants.forEach((restaurant) => {
+        root.innerHTML += createRestaurantItemTemplate(restaurant);
+      });
+    }
   },
 };
 

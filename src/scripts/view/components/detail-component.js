@@ -17,7 +17,7 @@ class DetailComponent extends HTMLElement {
               >
                 arrow_back_ios
               </i>
-              Explore
+              Back
             </span>
           </a>
           <button class="favorite">
