@@ -1,4 +1,5 @@
 import DicodingRestaurantSource from '../../data/source';
+import FavoriteRestaurantIdb from '../../data/favorite';
 import UrlParser from '../../routes/url-parser';
 import {
   createRestaurantDetailTemplate,
@@ -13,12 +14,26 @@ const RestaurantDetail = {
   },
 
   async afterRender() {
-    const url = UrlParser.parseActiveUrlWithoutCombiner();
     window.scrollTo(0, 0);
-
+    const url = UrlParser.parseActiveUrlWithoutCombiner();
     const restaurant = await DicodingRestaurantSource.detailRestaurant(url.id);
     $('.detail').prepend(createRestaurantDetailTemplate(restaurant));
     $('.detail__review-list').html(createReviewListTemplate(restaurant));
+
+    let isFavorite = await FavoriteRestaurantIdb.getRestaurant(restaurant.id);
+    if (isFavorite) {
+      $('#favorite-icon').addClass('active');
+    }
+
+    $('.favorite').on('click', () => {
+      if (isFavorite) {
+        FavoriteRestaurantIdb.deleteRestaurant(restaurant.id);
+      } else {
+        FavoriteRestaurantIdb.putRestaurant(restaurant);
+      }
+      $('#favorite-icon').toggleClass('active');
+      isFavorite = !isFavorite;
+    });
 
     $('.detail__review-form').on('submit', (event) => {
       event.preventDefault();
@@ -26,13 +41,9 @@ const RestaurantDetail = {
       $('.detail__review-form')[0].reset();
     });
 
-    $('.favorite').on('click', () => {
-      $('#favorite-icon').toggleClass('active');
-    });
-
     const addReviewHandler = async () => {
       const formValue = {
-        id: url.id,
+        id: restaurant.id,
         name: $('#reviewer-name')[0].value,
         review: $('#review')[0].value,
       };

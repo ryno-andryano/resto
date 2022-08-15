@@ -1,9 +1,7 @@
 import {openDB} from 'idb';
-import {
-  DATABASE_NAME,
-  DATABASE_VERSION,
-  OBJECT_STORE_NAME,
-} from '../global/config';
+import CONFIG from '../global/config';
+
+const {DATABASE_NAME, DATABASE_VERSION, OBJECT_STORE_NAME} = CONFIG;
 
 const dbPromise = openDB(DATABASE_NAME, DATABASE_VERSION, {
   upgrade(database) {
