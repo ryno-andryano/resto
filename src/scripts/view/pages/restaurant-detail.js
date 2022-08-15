@@ -16,21 +16,19 @@ const RestaurantDetail = {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     window.scrollTo(0, 0);
 
-    const renderRestaurant = async () => {
-      const restaurant = await DicodingRestaurantSource.detailRestaurant(
-        url.id,
-      );
-      $('.detail').prepend(createRestaurantDetailTemplate(restaurant));
-    };
-    await renderRestaurant();
+    const restaurant = await DicodingRestaurantSource.detailRestaurant(url.id);
+    $('.detail').prepend(createRestaurantDetailTemplate(restaurant));
+    $('.detail__review-list').html(createReviewListTemplate(restaurant));
 
-    const renderReview = async () => {
-      const restaurant = await DicodingRestaurantSource.detailRestaurant(
-        url.id,
-      );
-      $('.detail__review-list').html(createReviewListTemplate(restaurant));
-    };
-    await renderReview();
+    $('.detail__review-form').on('submit', (event) => {
+      event.preventDefault();
+      addReviewHandler();
+      $('.detail__review-form')[0].reset();
+    });
+
+    $('.favorite').on('click', () => {
+      $('#favorite-icon').toggleClass('active');
+    });
 
     const addReviewHandler = async () => {
       const formValue = {
@@ -39,14 +37,7 @@ const RestaurantDetail = {
         review: $('#review')[0].value,
       };
       await DicodingRestaurantSource.addReview(formValue);
-      await renderReview();
     };
-
-    $('.detail__review-form').on('submit', (event) => {
-      event.preventDefault();
-      addReviewHandler();
-      $('.detail__review-form')[0].reset();
-    });
   },
 };
 

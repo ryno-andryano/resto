@@ -201,20 +201,55 @@ html {
     font-size: 22px;
   }
 
-  .back {
-    display: inline-block;
-    margin-bottom: 8px;
+  .action-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-    &__wrapper {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      flex-wrap: nowrap;
-      font-size: 14px;
+    .back {
+      display: inline-block;
+
+      &__wrapper {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        padding: 12px 0 14px 0;
+      }
+
+      i {
+        font-size: 14px;
+      }
     }
 
-    i {
-      font-size: 14px;
+    .favorite {
+      background: none;
+      border: none;
+      cursor: pointer;
+
+      &__wrapper {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        padding: 12px 0 14px 0;
+        font-family: 'Lexend Deca', sans-serif;
+      }
+
+      i {
+        font-size: 14px;
+        margin-left: 4px;
+        color: $grey;
+        transition: color 0.3s ease;
+      }
+
+      .active {
+        color: rgb(207, 47, 47);
+        transition: color 0.3s ease;
+      }
+
+      &:focus-visible {
+        border: 2px solid $primary;
+        outline: 1px solid $dark;
+      }
     }
   }
 
@@ -523,10 +558,27 @@ html {
       font-size: 28px;
     }
 
-    .back {
-      &__wrapper,
-      i {
-        font-size: 16px;
+    .action-menu {
+      .back {
+        &__wrapper {
+          font-size: 18px;
+          padding: 10px 0 12px 0;
+        }
+
+        i {
+          font-size: 18px;
+        }
+      }
+
+      .favorite {
+        &__wrapper {
+          font-size: 18px;
+          padding: 10px 0 12px 0;
+        }
+
+        i {
+          font-size: 18px;
+        }
       }
     }
 
@@ -665,10 +717,29 @@ html {
       font-size: 34px;
     }
 
-    .back {
-      &__wrapper,
-      i {
-        font-size: 18px;
+    .action-menu {
+      width: calc(50% - 20px);
+
+      .back {
+        &__wrapper {
+          font-size: 20px;
+          padding: 10px 0 10px 0;
+        }
+
+        i {
+          font-size: 20px;
+        }
+      }
+
+      .favorite {
+        &__wrapper {
+          font-size: 20px;
+          padding: 10px 0 10px 0;
+        }
+
+        i {
+          font-size: 20px;
+        }
       }
     }
 
