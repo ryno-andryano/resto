@@ -1,4 +1,5 @@
 import './components/header-component';
+import './components/skip-component';
 import './components/hero-component';
 import './components/footer-component';
 import './components/explore-component';

@@ -26,6 +26,26 @@ const createRestaurantItemTemplate = ({
       </li>
 `;
 
+const restaurantItemPlaceholder = (loop) => {
+  let restaurantItemHtml = '';
+  for (let i = 0; i < loop; i++) {
+    restaurantItemHtml += `
+    <div class="placeholder-restaurant">
+      <div class="placeholder-restaurant__inner"></div>
+      <div class="placeholder-restaurant__inner"></div>
+      <div class="placeholder-restaurant__inner"></div>
+      <div class="placeholder-restaurant__inner"></div>
+      <div class="placeholder-restaurant__inner"></div>
+      <div class="placeholder-restaurant__inner"></div>
+      <div class="placeholder-restaurant__inner"></div>
+      <div class="placeholder-restaurant__inner"></div>
+      <div class="placeholder-restaurant__inner"></div>
+      <div class="placeholder-restaurant__inner"></div>
+    </div>`;
+  }
+  return restaurantItemHtml;
+};
+
 const currentDate = new Date().toLocaleDateString(
   ('id-ID', {year: 'numeric', month: 'long', day: 'numeric'}),
 );
@@ -95,4 +115,5 @@ export {
   createRestaurantDetailTemplate,
   createNewReviewTemplate,
   createReviewListTemplate,
+  restaurantItemPlaceholder,
 };

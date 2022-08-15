@@ -1,5 +1,8 @@
 import DicodingRestaurantSource from '../../data/source';
-import {createRestaurantItemTemplate} from '../templates/template';
+import {
+  createRestaurantItemTemplate,
+  restaurantItemPlaceholder,
+} from '../templates/template';
 import facts from '../../data/facts';
 
 const ExploreRestaurants = {
@@ -8,11 +11,20 @@ const ExploreRestaurants = {
   },
 
   async afterRender() {
-    const restaurants = await DicodingRestaurantSource.exploreRestaurants();
     const root = $('.restaurant__list')[0];
-    restaurants.forEach((restaurant) => {
-      root.innerHTML += createRestaurantItemTemplate(restaurant);
-    });
+    root.innerHTML = restaurantItemPlaceholder(3);
+
+    const restaurants = await DicodingRestaurantSource.exploreRestaurants();
+    if (restaurants == '') {
+      root.outerHTML =
+        '<p style="text-align: center">No restaurants found.</p>';
+    } else {
+      let restaurantList = '';
+      restaurants.forEach((restaurant) => {
+        restaurantList += createRestaurantItemTemplate(restaurant);
+      });
+      root.innerHTML = restaurantList;
+    }
 
     const randomizeFactHandler = (facts) => {
       const randomFact = () => {

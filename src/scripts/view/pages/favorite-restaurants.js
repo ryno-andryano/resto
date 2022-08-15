@@ -1,5 +1,8 @@
 import FavoriteRestaurantIdb from '../../data/favorite';
-import {createRestaurantItemTemplate} from '../templates/template';
+import {
+  createRestaurantItemTemplate,
+  restaurantItemPlaceholder,
+} from '../templates/template';
 
 const FavoriteRestaurants = {
   async render() {
@@ -7,15 +10,19 @@ const FavoriteRestaurants = {
   },
 
   async afterRender() {
-    const restaurants = await FavoriteRestaurantIdb.getAllRestaurants();
     const root = $('.restaurant__list')[0];
+    root.innerHTML = restaurantItemPlaceholder(3);
+
+    const restaurants = await FavoriteRestaurantIdb.getAllRestaurants();
     if (restaurants == '') {
       root.outerHTML =
         '<p style="text-align: center">No restaurants found.</p>';
     } else {
+      let restaurantList = '';
       restaurants.forEach((restaurant) => {
-        root.innerHTML += createRestaurantItemTemplate(restaurant);
+        restaurantList += createRestaurantItemTemplate(restaurant);
       });
+      root.innerHTML = restaurantList;
     }
   },
 };

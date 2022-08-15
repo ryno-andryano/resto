@@ -2,6 +2,7 @@ import 'regenerator-runtime';
 import 'jquery';
 import 'material-icons/iconfont/filled.css';
 import '../styles/main.scss';
+import '../styles/placeholder-style.scss';
 import App from './view/app';
 import swRegister from './utils/sw-register';
 
