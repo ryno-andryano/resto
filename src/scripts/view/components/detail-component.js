@@ -5,7 +5,7 @@ class DetailComponent extends HTMLElement {
 
   render() {
     this.innerHTML = `
-      <main id="main" class="main">
+      <main id="main" class="main" tabindex="0">
         <div class="action-menu">
           <a href="javascript:history.back()" class="back">
             <span class="back__wrapper">
