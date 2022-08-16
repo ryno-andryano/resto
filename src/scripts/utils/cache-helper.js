@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import CONFIG from '../global/config';
 
 const CacheHelper = {

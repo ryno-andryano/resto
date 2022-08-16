@@ -45,6 +45,7 @@ class DetailComponent extends HTMLElement {
                 type="text"
                 name="reviewer-name"
                 id="reviewer-name"
+                placeholder="Enter your name"
                 required
               />
               <label for="review">Review</label>
@@ -52,6 +53,7 @@ class DetailComponent extends HTMLElement {
                 id="review"
                 name="review"
                 rows="2"
+                placeholder="Share your experience"
                 required
               ></textarea>
               <button class="detail__submit-button" type="submit">

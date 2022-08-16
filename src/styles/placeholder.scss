@@ -1,0 +1,282 @@
+.loading {
+  overflow: hidden;
+  background: #000;
+  animation-duration: 1.7s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-name: placeholderAnimate;
+  background: #f6f7f8;
+  background: linear-gradient(to right, #eee 2%, #ddd 18%, #eee 33%);
+  background-size: 1300px;
+  position: relative;
+}
+
+.placeholder-restaurant {
+  height: 560px;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px 2px rgba(0, 0, 0, 0.15);
+
+  &__mask {
+    position: absolute;
+    background: #fff;
+    z-index: 2;
+
+    &:after,
+    &:before {
+      width: inherit;
+      height: inherit;
+      content: '';
+      position: absolute;
+    }
+
+    &:nth-child(1) {
+      top: 220px;
+      left: 0;
+      width: 100%;
+      height: 26px;
+    }
+
+    &:nth-child(2) {
+      top: 246px;
+      left: 0;
+      width: 15%;
+      height: 32px;
+    }
+
+    &:nth-child(3) {
+      top: 246px;
+      right: 0;
+      width: 15%;
+      height: 32px;
+    }
+
+    &:nth-child(4) {
+      top: 278px;
+      left: 0;
+      width: 100%;
+      height: 6px;
+    }
+
+    &:nth-child(5) {
+      top: 284px;
+      left: 0;
+      width: 30px;
+      height: 276px;
+    }
+
+    &:nth-child(6) {
+      top: 284px;
+      right: 0;
+      width: 30px;
+      height: 276px;
+    }
+
+    &:nth-child(7) {
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 30px;
+    }
+
+    &:nth-child(8) {
+      top: 304px;
+      left: 0;
+      width: 100%;
+      height: 12px;
+    }
+
+    &:nth-child(9) {
+      top: 284px;
+      left: 0;
+      width: 40%;
+      height: 20px;
+    }
+
+    &:nth-child(10) {
+      top: 284px;
+      right: 0;
+      width: 40%;
+      height: 20px;
+    }
+  }
+}
+
+.placeholder-detail {
+  &__image {
+    height: 225px;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px 2px rgba(0, 0, 0, 0.15);
+  }
+
+  &__text {
+    margin-top: 20px;
+    width: 100%;
+    height: 200px;
+  }
+
+  &__mask {
+    position: absolute;
+    background: #fafafa;
+    z-index: 2;
+
+    &:after,
+    &:before {
+      width: inherit;
+      height: inherit;
+      content: '';
+      position: absolute;
+    }
+
+    &:nth-child(1) {
+      top: 0;
+      left: 0;
+      width: 35%;
+      height: 28px;
+    }
+
+    &:nth-child(2) {
+      top: 0;
+      right: 0;
+      width: 35%;
+      height: 28px;
+    }
+
+    &:nth-child(3) {
+      top: 28px;
+      left: 0;
+      width: 100%;
+      height: 4px;
+    }
+
+    &:nth-child(4) {
+      top: 32px;
+      left: 0;
+      width: 10%;
+      height: 20px;
+    }
+
+    &:nth-child(5) {
+      top: 32px;
+      right: 0;
+      width: 10%;
+      height: 20px;
+    }
+
+    &:nth-child(6) {
+      top: 52px;
+      left: 0;
+      width: 100%;
+      height: 12px;
+    }
+
+    &:nth-child(7) {
+      top: 78px;
+      left: 0;
+      width: 100%;
+      height: 6px;
+    }
+
+    &:nth-child(8) {
+      top: 98px;
+      left: 0;
+      width: 100%;
+      height: 6px;
+    }
+
+    &:nth-child(9) {
+      top: 118px;
+      left: 0;
+      width: 100%;
+      height: 6px;
+    }
+
+    &:nth-child(10) {
+      top: 138px;
+      left: 0;
+      width: 100%;
+      height: 6px;
+    }
+
+    &:nth-child(11) {
+      top: 158px;
+      left: 0;
+      width: 100%;
+      height: 6px;
+    }
+
+    &:nth-child(12) {
+      top: 178px;
+      left: 0;
+      width: 100%;
+      height: 6px;
+    }
+  }
+}
+
+.placeholder-review {
+  height: 110px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px 2px rgba(0, 0, 0, 0.15);
+  margin-top: 12px;
+}
+
+@keyframes placeholderAnimate {
+  0% {
+    background-position: -650px 0;
+  }
+  100% {
+    background-position: 650px 0;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .placeholder-detail {
+    &__image {
+      height: 290px;
+    }
+  }
+
+  .placeholder-review {
+    width: 48%;
+    margin: 0 1% 12px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .placeholder-detail {
+    &__image {
+      height: 400px;
+    }
+
+    &__text {
+      margin: 0;
+    }
+
+    &__mask {
+      &:nth-child(1) {
+        width: 0;
+      }
+
+      &:nth-child(2) {
+        width: 70%;
+      }
+
+      &:nth-child(4) {
+        width: 0;
+      }
+
+      &:nth-child(5) {
+        width: 25%;
+      }
+    }
+  }
+
+  .placeholder-review {
+    height: 140px;
+    width: 32%;
+    margin: 0 0.66% 18px;
+  }
+}

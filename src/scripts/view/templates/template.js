@@ -28,9 +28,8 @@ const createRestaurantItemTemplate = ({
 `;
 };
 
-const currentDate = new Date().toLocaleDateString(
-  ('id-ID', {year: 'numeric', month: 'long', day: 'numeric'}),
-);
+const format = {year: 'numeric', month: 'long', day: 'numeric'};
+const currentDate = new Date().toLocaleDateString(('id-ID', format));
 const createNewReviewTemplate = ({name, review, date = currentDate}) => {
   return `
     <li class="detail__review-item">

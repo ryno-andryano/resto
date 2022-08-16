@@ -1,4 +1,3 @@
-/* eslint-disable new-cap */
 import API_ENDPOINT from '../global/api-endpoint';
 
 class DicodingRestaurantSource {
@@ -9,6 +8,7 @@ class DicodingRestaurantSource {
   }
 
   static async detailRestaurant(id) {
+    // eslint-disable-next-line new-cap
     const response = await fetch(API_ENDPOINT.DETAIL(id));
     const {restaurant} = await response.json();
     return restaurant;

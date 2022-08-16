@@ -59,14 +59,15 @@ html {
   }
 }
 
-.skip-link {
+.skip-button {
   position: absolute;
   top: -40px;
   left: 4px;
-  background-color: $light;
+  background-color: $primary;
   color: $dark;
   padding: 8px;
   z-index: 6;
+  font-weight: 600;
 
   &:focus {
     top: 4px;
@@ -84,7 +85,7 @@ html {
   z-index: 5;
   top: 0;
   left: 0;
-  box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 4px 2px rgba(0, 0, 0, 0.15);
 
   &__inner {
     display: flex;
@@ -125,7 +126,7 @@ html {
     visibility: hidden;
     opacity: 0;
     transition: all 0.2s linear;
-    box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 4px 2px rgba(0, 0, 0, 0.15);
     font-size: 1em;
     font-weight: 600;
 
@@ -149,19 +150,12 @@ html {
     border: none;
     cursor: pointer;
 
-    #menu-button,
-    #close-button {
+    #menu-icon,
+    #close-icon {
       color: $dark;
       font-size: 36px;
       padding: 4px;
     }
-  }
-
-  &__close-icon {
-    position: absolute;
-    margin-right: 18px;
-    font-size: 32px;
-    right: -100vw;
   }
 }
 
@@ -265,7 +259,7 @@ html {
         position: relative;
         list-style-type: none;
         border-radius: 12px;
-        box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 2px 4px 2px rgba(0, 0, 0, 0.15);
         min-width: 0;
 
         &__picture {
@@ -295,7 +289,7 @@ html {
           top: 16px;
           font-weight: 600;
           font-size: 4vw;
-          box-shadow: 2px 0px 3px 1px rgba(0, 0, 0, 0.25);
+          box-shadow: 2px0 3px 1px rgba(0, 0, 0, 0.25);
 
           &-icon {
             color: $dark;
@@ -338,7 +332,7 @@ html {
         rgba(255, 212, 56, 0.5)
       ),
       url('../public/images/pattern.jpg');
-    box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 4px 2px rgba(0, 0, 0, 0.15);
     background-size: cover;
     border-radius: 20px;
     min-height: 160px;
@@ -388,7 +382,7 @@ html {
     &__image {
       max-width: 100%;
       border-radius: 8px;
-      box-shadow: 0px 2px 4px 2px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 2px 4px 2px rgba(0, 0, 0, 0.15);
     }
 
     &__name {
@@ -429,7 +423,7 @@ html {
       background-color: $lighter;
       list-style-type: none;
       border-radius: 12px;
-      box-shadow: 0px 1px 4px 2px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 1px 4px 2px rgba(0, 0, 0, 0.15);
       padding: 20px 16px;
       text-align: center;
       margin-top: 12px;
@@ -461,7 +455,7 @@ html {
     &__review-form {
       background-color: $lighter;
       border-radius: 12px;
-      box-shadow: 0px 1px 4px 2px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 1px 4px 2px rgba(0, 0, 0, 0.15);
       padding: 20px;
       margin-top: 12px;
 
@@ -482,7 +476,7 @@ html {
       input,
       textarea {
         margin-bottom: 12px;
-        padding: 8px;
+        padding: 12px;
         resize: none;
         font-size: 4vw;
       }

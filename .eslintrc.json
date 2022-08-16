@@ -9,5 +9,7 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "rules": {"require-jsdoc": "off", "indent": "off"}
+  "rules": {
+    "require-jsdoc": "off"
+  }
 }

@@ -15,14 +15,14 @@ class HeaderComponent extends HTMLElement {
 
           <button class="header__menu-button">
             <i
-              id="menu-button"
+              id="menu-icon"
               class="material-icons"
               title="Open Menu"
               aria-label="Open Menu"
               >menu</i
             >
             <i
-              id="close-button"
+              id="close-icon"
               class="material-icons hidden"
               title="Close Menu"
               aria-label="Close Menu"
