@@ -4,6 +4,7 @@ import UrlParser from '../../routes/url-parser';
 import {
   createRestaurantDetailTemplate,
   createReviewListTemplate,
+  restaurantDetailPlaceholder,
 } from '../templates/template';
 
 const RestaurantDetail = {
@@ -15,9 +16,11 @@ const RestaurantDetail = {
 
   async afterRender() {
     window.scrollTo(0, 0);
+    $('.detail__inner').html(restaurantDetailPlaceholder());
+
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const restaurant = await DicodingRestaurantSource.detailRestaurant(url.id);
-    $('.detail').prepend(createRestaurantDetailTemplate(restaurant));
+    $('.detail__inner').html(createRestaurantDetailTemplate(restaurant));
     $('.detail__review-list').html(createReviewListTemplate(restaurant));
 
     let isFavorite = await FavoriteRestaurantIdb.getRestaurant(restaurant.id);

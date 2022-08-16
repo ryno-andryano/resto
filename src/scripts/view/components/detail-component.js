@@ -12,7 +12,7 @@ class DetailComponent extends HTMLElement {
               <i
                 id="back-icon"
                 title="Back"
-                aria-label="Back"
+                aria-label="Back Icon"
                 class="material-icons"
               >
                 arrow_back_ios
@@ -25,7 +25,7 @@ class DetailComponent extends HTMLElement {
               Favorite
               <i
                 id="favorite-icon"
-                aria-label="Favorite"
+                aria-label="Favorite Icon"
                 title="Favorite"
                 class="material-icons"
               >
@@ -36,6 +36,7 @@ class DetailComponent extends HTMLElement {
         </div>
 
         <section class="detail">
+          <div class="detail__inner"></div>
           <div class="detail__add-review">
             <h3>Add Review</h3>
             <form class="detail__review-form" action="">

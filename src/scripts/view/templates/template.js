@@ -7,7 +7,8 @@ const createRestaurantItemTemplate = ({
   city,
   rating,
   description,
-}) => `
+}) => {
+  return `
       <li class="restaurant-item">
         <img
           src="${CONFIG.BASE_IMAGE_URL}small/${pictureId}"
@@ -25,25 +26,6 @@ const createRestaurantItemTemplate = ({
         <p class="restaurant-item__description">${description}</p>
       </li>
 `;
-
-const restaurantItemPlaceholder = (loop) => {
-  let restaurantItemHtml = '';
-  for (let i = 0; i < loop; i++) {
-    restaurantItemHtml += `
-    <div class="placeholder-restaurant">
-      <div class="placeholder-restaurant__inner"></div>
-      <div class="placeholder-restaurant__inner"></div>
-      <div class="placeholder-restaurant__inner"></div>
-      <div class="placeholder-restaurant__inner"></div>
-      <div class="placeholder-restaurant__inner"></div>
-      <div class="placeholder-restaurant__inner"></div>
-      <div class="placeholder-restaurant__inner"></div>
-      <div class="placeholder-restaurant__inner"></div>
-      <div class="placeholder-restaurant__inner"></div>
-      <div class="placeholder-restaurant__inner"></div>
-    </div>`;
-  }
-  return restaurantItemHtml;
 };
 
 const currentDate = new Date().toLocaleDateString(
@@ -110,10 +92,64 @@ const createRestaurantDetailTemplate = ({
     </div>`;
 };
 
+const restaurantItemPlaceholder = (loop) => {
+  let restaurantItemHtml = '';
+  for (let i = 0; i < loop; i++) {
+    restaurantItemHtml += `
+    <div class="placeholder-restaurant loading">
+      <div class="placeholder-restaurant__mask"></div>
+      <div class="placeholder-restaurant__mask"></div>
+      <div class="placeholder-restaurant__mask"></div>
+      <div class="placeholder-restaurant__mask"></div>
+      <div class="placeholder-restaurant__mask"></div>
+      <div class="placeholder-restaurant__mask"></div>
+      <div class="placeholder-restaurant__mask"></div>
+      <div class="placeholder-restaurant__mask"></div>
+      <div class="placeholder-restaurant__mask"></div>
+      <div class="placeholder-restaurant__mask"></div>
+    </div>`;
+  }
+  return restaurantItemHtml;
+};
+
+const restaurantDetailPlaceholder = () => {
+  return `
+    <div class="detail__wrapper">
+      <div class="placeholder-detail__image loading"></div>
+      <div class="placeholder-detail__text loading">
+        <div class="placeholder-detail__mask"></div>
+        <div class="placeholder-detail__mask"></div>
+        <div class="placeholder-detail__mask"></div>
+        <div class="placeholder-detail__mask"></div>
+        <div class="placeholder-detail__mask"></div>
+        <div class="placeholder-detail__mask"></div>
+        <div class="placeholder-detail__mask"></div>
+        <div class="placeholder-detail__mask"></div>
+        <div class="placeholder-detail__mask"></div>
+        <div class="placeholder-detail__mask"></div>
+        <div class="placeholder-detail__mask"></div>
+        <div class="placeholder-detail__mask"></div>
+      </div>
+    </div>
+
+    <div class="detail__review">
+      <h3>Customer Reviews</h3>
+      <ul class="detail__review-list">
+        <div class="placeholder-review loading"></div>
+        <div class="placeholder-review loading"></div>
+        <div class="placeholder-review loading"></div>
+        <div class="placeholder-review loading"></div>
+        <div class="placeholder-review loading"></div>
+        <div class="placeholder-review loading"></div>
+      </ul>
+    </div>`;
+};
+
 export {
   createRestaurantItemTemplate,
   createRestaurantDetailTemplate,
   createNewReviewTemplate,
   createReviewListTemplate,
   restaurantItemPlaceholder,
+  restaurantDetailPlaceholder,
 };
