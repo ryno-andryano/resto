@@ -4,7 +4,7 @@ class FavoriteComponent extends HTMLElement {
   }
 
   render() {
-    this.innerHTML = `
+    this.outerHTML = `
       <main id="main" class="main" tabindex="0">
         <section class="restaurant">
           <h2>Favorite Restaurants</h2>

@@ -1,10 +1,10 @@
-class HeroComponent extends HTMLElement {
+class HeroImage extends HTMLElement {
   connectedCallback() {
     this.render();
   }
 
   render() {
-    this.innerHTML = `
+    this.outerHTML = `
       <section class="hero-section" title="Hero Image">
         <h2 class="hero-section__caption">
           Find The Most Popular<br /><u>Restaurants</u> Near You
@@ -13,4 +13,4 @@ class HeroComponent extends HTMLElement {
   }
 }
 
-customElements.define('hero-component', HeroComponent);
+customElements.define('hero-image', HeroImage);

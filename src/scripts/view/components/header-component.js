@@ -4,12 +4,12 @@ class HeaderComponent extends HTMLElement {
   }
 
   render() {
-    this.innerHTML = `
+    this.outerHTML = `
       <header class="header">
         <div class="header__inner">
           <h1 class="header__logo">
             <a href="/">
-              <img src="./images/logo-long.png" alt="Resto Logo" />
+              <img src="./images/logo-long.png" alt="RESTO" />
             </a>
           </h1>
 

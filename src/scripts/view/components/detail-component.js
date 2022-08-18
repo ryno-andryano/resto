@@ -4,7 +4,7 @@ class DetailComponent extends HTMLElement {
   }
 
   render() {
-    this.innerHTML = `
+    this.outerHTML = `
       <main id="main" class="main" tabindex="0">
         <div class="action-menu">
           <a href="javascript:history.back()" class="back">
@@ -36,7 +36,37 @@ class DetailComponent extends HTMLElement {
         </div>
 
         <section class="detail">
-          <div class="detail__inner"></div>
+          <div class="detail__inner">
+            <div class="detail__wrapper">
+              <div class="placeholder-detail__image loading"></div>
+              <div class="placeholder-detail__text loading">
+                <div class="placeholder-detail__mask"></div>
+                <div class="placeholder-detail__mask"></div>
+                <div class="placeholder-detail__mask"></div>
+                <div class="placeholder-detail__mask"></div>
+                <div class="placeholder-detail__mask"></div>
+                <div class="placeholder-detail__mask"></div>
+                <div class="placeholder-detail__mask"></div>
+                <div class="placeholder-detail__mask"></div>
+                <div class="placeholder-detail__mask"></div>
+                <div class="placeholder-detail__mask"></div>
+                <div class="placeholder-detail__mask"></div>
+                <div class="placeholder-detail__mask"></div>
+              </div>
+            </div>
+
+            <div class="detail__review">
+              <h3>Customer Reviews</h3>
+              <ul class="detail__review-list">
+                <div class="placeholder-review loading"></div>
+                <div class="placeholder-review loading"></div>
+                <div class="placeholder-review loading"></div>
+                <div class="placeholder-review loading"></div>
+                <div class="placeholder-review loading"></div>
+                <div class="placeholder-review loading"></div>
+              </ul>
+            </div>
+          </div>
           <div class="detail__add-review">
             <h3>Add Review</h3>
             <form class="detail__review-form" action="">

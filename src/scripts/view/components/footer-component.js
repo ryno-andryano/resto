@@ -4,7 +4,7 @@ class FooterComponent extends HTMLElement {
   }
 
   render() {
-    this.innerHTML = `
+    this.outerHTML = `
       <footer class="footer">
         <div class="footer__inner">Copyright © 2022 - RESTO</div>
       </footer>`;
