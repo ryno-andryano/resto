@@ -11,42 +11,9 @@ class ExploreComponent extends HTMLElement {
         <section class="restaurant">
           <h2>Explore Restaurants</h2>
           <ul class="restaurant__list">
-            <div class="placeholder-restaurant loading">
-              <div class="placeholder-restaurant__mask"></div>
-              <div class="placeholder-restaurant__mask"></div>
-              <div class="placeholder-restaurant__mask"></div>
-              <div class="placeholder-restaurant__mask"></div>
-              <div class="placeholder-restaurant__mask"></div>
-              <div class="placeholder-restaurant__mask"></div>
-              <div class="placeholder-restaurant__mask"></div>
-              <div class="placeholder-restaurant__mask"></div>
-              <div class="placeholder-restaurant__mask"></div>
-              <div class="placeholder-restaurant__mask"></div>
-            </div>
-            <div class="placeholder-restaurant loading">
-              <div class="placeholder-restaurant__mask"></div>
-              <div class="placeholder-restaurant__mask"></div>
-              <div class="placeholder-restaurant__mask"></div>
-              <div class="placeholder-restaurant__mask"></div>
-              <div class="placeholder-restaurant__mask"></div>
-              <div class="placeholder-restaurant__mask"></div>
-              <div class="placeholder-restaurant__mask"></div>
-              <div class="placeholder-restaurant__mask"></div>
-              <div class="placeholder-restaurant__mask"></div>
-              <div class="placeholder-restaurant__mask"></div>
-            </div>
-            <div class="placeholder-restaurant loading">
-              <div class="placeholder-restaurant__mask"></div>
-              <div class="placeholder-restaurant__mask"></div>
-              <div class="placeholder-restaurant__mask"></div>
-              <div class="placeholder-restaurant__mask"></div>
-              <div class="placeholder-restaurant__mask"></div>
-              <div class="placeholder-restaurant__mask"></div>
-              <div class="placeholder-restaurant__mask"></div>
-              <div class="placeholder-restaurant__mask"></div>
-              <div class="placeholder-restaurant__mask"></div>
-              <div class="placeholder-restaurant__mask"></div>
-            </div>
+            <restaurant-item-skeleton></restaurant-item-skeleton>
+            <restaurant-item-skeleton></restaurant-item-skeleton>
+            <restaurant-item-skeleton></restaurant-item-skeleton>
           </ul>
         </section>
 

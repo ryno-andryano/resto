@@ -38,32 +38,13 @@ class DetailComponent extends HTMLElement {
         <section class="detail">
           <div class="detail__inner">
             <div class="detail__wrapper">
-              <div class="placeholder-detail__image loading"></div>
-              <div class="placeholder-detail__text loading">
-                <div class="placeholder-detail__mask"></div>
-                <div class="placeholder-detail__mask"></div>
-                <div class="placeholder-detail__mask"></div>
-                <div class="placeholder-detail__mask"></div>
-                <div class="placeholder-detail__mask"></div>
-                <div class="placeholder-detail__mask"></div>
-                <div class="placeholder-detail__mask"></div>
-                <div class="placeholder-detail__mask"></div>
-                <div class="placeholder-detail__mask"></div>
-                <div class="placeholder-detail__mask"></div>
-                <div class="placeholder-detail__mask"></div>
-                <div class="placeholder-detail__mask"></div>
-              </div>
+              <detail-content-skeleton></detail-content-skeleton>
             </div>
 
             <div class="detail__review">
               <h3>Customer Reviews</h3>
               <ul class="detail__review-list">
-                <div class="placeholder-review loading"></div>
-                <div class="placeholder-review loading"></div>
-                <div class="placeholder-review loading"></div>
-                <div class="placeholder-review loading"></div>
-                <div class="placeholder-review loading"></div>
-                <div class="placeholder-review loading"></div>
+                <review-item-skeleton></review-item-skeleton>
               </ul>
             </div>
           </div>

@@ -8,7 +8,11 @@ class FavoriteComponent extends HTMLElement {
       <main id="main" class="main" tabindex="0">
         <section class="restaurant">
           <h2>Favorite Restaurants</h2>
-          <ul class="restaurant__list"></ul>
+          <ul class="restaurant__list">
+            <restaurant-item-skeleton></restaurant-item-skeleton>  
+            <restaurant-item-skeleton></restaurant-item-skeleton>  
+            <restaurant-item-skeleton></restaurant-item-skeleton>  
+          </ul>
         </section>
       </main>`;
   }
