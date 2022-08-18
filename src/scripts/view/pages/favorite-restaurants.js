@@ -10,19 +10,19 @@ const FavoriteRestaurants = {
   },
 
   async afterRender() {
-    const root = $('.restaurant__list')[0];
-    root.innerHTML = restaurantItemPlaceholder(3);
+    const $restaurantList = document.querySelector('.restaurant__list');
+    $restaurantList.innerHTML = restaurantItemPlaceholder(3);
 
     const restaurants = await FavoriteRestaurantIdb.getAllRestaurants();
     if (restaurants == '') {
-      root.outerHTML =
+      $restaurantList.outerHTML =
         '<p style="text-align: center">No restaurants found.</p>';
     } else {
-      let restaurantList = '';
+      let restaurantItem = '';
       restaurants.forEach((restaurant) => {
-        restaurantList += createRestaurantItemTemplate(restaurant);
+        restaurantItem += createRestaurantItemTemplate(restaurant);
       });
-      root.innerHTML = restaurantList;
+      $restaurantList.innerHTML = restaurantItem;
     }
   },
 };

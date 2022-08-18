@@ -11,32 +11,36 @@ const ExploreRestaurants = {
   },
 
   async afterRender() {
-    const root = $('.restaurant__list')[0];
-    root.innerHTML = restaurantItemPlaceholder(3);
+    const $restaurantList = document.querySelector('.restaurant__list');
+    $restaurantList.innerHTML = restaurantItemPlaceholder(3);
 
     const restaurants = await DicodingRestaurantSource.exploreRestaurants();
     if (restaurants == '') {
-      root.outerHTML =
+      $restaurantList.outerHTML =
         '<p style="text-align: center">No restaurants found.</p>';
     } else {
-      let restaurantList = '';
+      let restaurantItem = '';
       restaurants.forEach((restaurant) => {
-        restaurantList += createRestaurantItemTemplate(restaurant);
+        restaurantItem += createRestaurantItemTemplate(restaurant);
       });
-      root.innerHTML = restaurantList;
+      $restaurantList.innerHTML = restaurantItem;
     }
 
     const randomizeFactHandler = (facts) => {
       const randomFact = () => {
         return facts[Math.floor(Math.random() * facts.length)];
       };
-      $('.food-facts__shuffle-button i').toggleClass('spin');
-      $('.food-facts__fact').text(randomFact);
+      document
+        .querySelector('.food-facts__shuffle-button i')
+        .classList.toggle('spin');
+      document.querySelector('.food-facts__fact').innerHTML = randomFact(facts);
     };
     randomizeFactHandler(facts);
-    $('.food-facts__shuffle-button').on('click', () => {
-      randomizeFactHandler(facts);
-    });
+    document
+      .querySelector('.food-facts__shuffle-button')
+      .addEventListener('click', () => {
+        randomizeFactHandler(facts);
+      });
   },
 };
 

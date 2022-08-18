@@ -16,39 +16,43 @@ const RestaurantDetail = {
 
   async afterRender() {
     window.scrollTo(0, 0);
-    $('.detail__inner').html(restaurantDetailPlaceholder());
+    const $detailInner = document.querySelector('.detail__inner');
+    $detailInner.innerHTML = restaurantDetailPlaceholder();
 
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const restaurant = await DicodingRestaurantSource.detailRestaurant(url.id);
-    $('.detail__inner').html(createRestaurantDetailTemplate(restaurant));
-    $('.detail__review-list').html(createReviewListTemplate(restaurant));
+    $detailInner.innerHTML = createRestaurantDetailTemplate(restaurant);
+    document.querySelector('.detail__review-list').innerHTML =
+      createReviewListTemplate(restaurant);
 
     let isFavorite = await FavoriteRestaurantIdb.getRestaurant(restaurant.id);
+    const $favoriteIcon = document.querySelector('#favorite-icon');
     if (isFavorite) {
-      $('#favorite-icon').addClass('active');
+      $favoriteIcon.classList.add('active');
     }
 
-    $('.favorite').on('click', () => {
+    document.querySelector('.favorite').addEventListener('click', () => {
       if (isFavorite) {
         FavoriteRestaurantIdb.deleteRestaurant(restaurant.id);
       } else {
         FavoriteRestaurantIdb.putRestaurant(restaurant);
       }
-      $('#favorite-icon').toggleClass('active');
+      $favoriteIcon.classList.toggle('active');
       isFavorite = !isFavorite;
     });
 
-    $('.detail__review-form').on('submit', (event) => {
+    const $reviewForm = document.querySelector('.detail__review-form');
+    $reviewForm.addEventListener('submit', (event) => {
       event.preventDefault();
       addReviewHandler();
-      $('.detail__review-form')[0].reset();
+      $reviewForm.reset();
     });
 
     const addReviewHandler = async () => {
       const formValue = {
         id: restaurant.id,
-        name: $('#reviewer-name')[0].value,
-        review: $('#review')[0].value,
+        name: document.querySelector('#reviewer-name').value,
+        review: document.querySelector('#review').value,
       };
       await DicodingRestaurantSource.addReview(formValue);
     };

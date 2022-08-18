@@ -33,8 +33,8 @@ class App {
     const url = UrlParser.parseActiveUrlWithCombiner();
     const page = routes[url];
     this._content.innerHTML = await page.render();
-    $('#skip-button').on('click', () => {
-      $('#main')[0].focus();
+    document.querySelector('#skip-button').addEventListener('click', () => {
+      document.querySelector('#main').focus();
     });
     await page.afterRender();
   }
