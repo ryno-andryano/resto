@@ -1,6 +1,6 @@
 import FavoriteRestaurantIdb from '../data/favorite';
 
-const FavoriteButtonInitiator = {
+const FavoriteButtonPresenter = {
   async init({favoriteButton, restaurant}) {
     this._favoriteButton = favoriteButton;
     this._restaurant = restaurant;
@@ -46,4 +46,4 @@ const FavoriteButtonInitiator = {
   },
 };
 
-export default FavoriteButtonInitiator;
+export default FavoriteButtonPresenter;

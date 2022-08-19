@@ -1,5 +1,5 @@
 import DicodingRestaurantSource from '../../data/source';
-import FavoriteButtonInitiator from '../../utils/favorite-button-initiator';
+import FavoriteButtonPresenter from '../../utils/favorite-button-presenter';
 import UrlParser from '../../routes/url-parser';
 
 const RestaurantDetail = {
@@ -29,7 +29,7 @@ const RestaurantDetail = {
         ></review-item>`;
     });
 
-    FavoriteButtonInitiator.init({
+    FavoriteButtonPresenter.init({
       favoriteButton: document.querySelector('.favorite'),
       restaurant,
     });
