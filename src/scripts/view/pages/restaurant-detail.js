@@ -1,5 +1,5 @@
 import DicodingRestaurantSource from '../../data/source';
-import FavoriteRestaurantIdb from '../../data/favorite';
+import FavoriteButtonInitiator from '../../utils/favorite-button-initiator';
 import UrlParser from '../../routes/url-parser';
 
 const RestaurantDetail = {
@@ -13,7 +13,6 @@ const RestaurantDetail = {
     window.scrollTo(0, 0);
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const restaurant = await DicodingRestaurantSource.detailRestaurant(url.id);
-    let isFavorite = await FavoriteRestaurantIdb.getRestaurant(restaurant.id);
     const {customerReviews} = restaurant;
 
     document.querySelector('.detail__wrapper').outerHTML = `
@@ -30,19 +29,9 @@ const RestaurantDetail = {
         ></review-item>`;
     });
 
-    const $favorite = document.querySelector('.favorite');
-    const $favoriteIcon = document.querySelector('#favorite-icon');
-    if (isFavorite) {
-      $favoriteIcon.classList.add('active');
-    }
-    $favorite.addEventListener('click', () => {
-      if (isFavorite) {
-        FavoriteRestaurantIdb.deleteRestaurant(restaurant.id);
-      } else {
-        FavoriteRestaurantIdb.putRestaurant(restaurant);
-      }
-      $favoriteIcon.classList.toggle('active');
-      isFavorite = !isFavorite;
+    FavoriteButtonInitiator.init({
+      favoriteButton: document.querySelector('.favorite'),
+      restaurant,
     });
 
     const $reviewForm = document.querySelector('.detail__review-form');

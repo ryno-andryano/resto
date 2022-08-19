@@ -232,11 +232,6 @@ html {
       i {
         font-size: 14px;
         margin-left: 4px;
-        color: $grey;
-        transition: color 0.3s ease;
-      }
-
-      .active {
         color: rgb(207, 47, 47);
         transition: color 0.3s ease;
       }

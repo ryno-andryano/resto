@@ -15,7 +15,7 @@ class RestaurantItem extends HTMLElement {
           class="restaurant-item__picture"
         />
         <div class="restaurant-item__rating">
-          <i class="material-icons restaurant-item__rating-icon">star</i>
+          <i class="material-icons restaurant-item__rating-icon">star_rate</i>
           <span>${rating}</span>
         </div>
         <h3 class="restaurant-item__name">

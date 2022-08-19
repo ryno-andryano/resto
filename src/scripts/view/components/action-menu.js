@@ -11,7 +11,7 @@ class ActionMenu extends HTMLElement {
             <i
               id="back-icon"
               title="Back"
-              aria-label="Back Icon"
+              aria-label="Back"
               class="material-icons"
             >
               arrow_back_ios
@@ -19,19 +19,7 @@ class ActionMenu extends HTMLElement {
             Back
           </span>
         </a>
-        <button class="favorite">
-          <span class="favorite__wrapper">
-            Favorite
-            <i
-              id="favorite-icon"
-              aria-label="Favorite Icon"
-              title="Favorite"
-              class="material-icons"
-            >
-              favorite
-            </i>
-          </span>
-        </button>
+        <button class="favorite"></button>
       </div>`;
   }
 }
