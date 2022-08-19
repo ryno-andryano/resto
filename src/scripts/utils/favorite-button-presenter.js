@@ -1,9 +1,8 @@
-import FavoriteRestaurantIdb from '../data/favorite';
-
 const FavoriteButtonPresenter = {
-  async init({favoriteButton, restaurant}) {
+  async init({favoriteButton, restaurant, favoriteRestaurants}) {
     this._favoriteButton = favoriteButton;
     this._restaurant = restaurant;
+    this._favoriteRestaurants = favoriteRestaurants;
 
     await this._renderButton();
   },
@@ -19,7 +18,7 @@ const FavoriteButtonPresenter = {
   },
 
   async _isFavorited(id) {
-    const restaurant = await FavoriteRestaurantIdb.getRestaurant(id);
+    const restaurant = await this._favoriteRestaurants.getRestaurant(id);
     return !!restaurant;
   },
 
@@ -29,7 +28,7 @@ const FavoriteButtonPresenter = {
 
     const $favoriteButton = document.querySelector('.favorite');
     $favoriteButton.addEventListener('click', async () => {
-      await FavoriteRestaurantIdb.putRestaurant(this._restaurant);
+      await this._favoriteRestaurants.putRestaurant(this._restaurant);
       this._renderButton();
     });
   },
@@ -40,7 +39,7 @@ const FavoriteButtonPresenter = {
 
     const $favoriteButton = document.querySelector('.favorite');
     $favoriteButton.addEventListener('click', async () => {
-      await FavoriteRestaurantIdb.deleteRestaurant(this._restaurant.id);
+      await this._favoriteRestaurants.deleteRestaurant(this._restaurant.id);
       this._renderButton();
     });
   },

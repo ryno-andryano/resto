@@ -1,6 +1,7 @@
 import DicodingRestaurantSource from '../../data/source';
 import FavoriteButtonPresenter from '../../utils/favorite-button-presenter';
 import UrlParser from '../../routes/url-parser';
+import FavoriteRestaurantIdb from '../../data/favorite';
 
 const RestaurantDetail = {
   async render() {
@@ -32,6 +33,7 @@ const RestaurantDetail = {
     FavoriteButtonPresenter.init({
       favoriteButton: document.querySelector('.favorite'),
       restaurant,
+      favoriteRestaurants: FavoriteRestaurantIdb,
     });
 
     const $reviewForm = document.querySelector('.detail__review-form');
