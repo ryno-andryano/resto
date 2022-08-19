@@ -15,16 +15,13 @@ const RestaurantDetail = {
     const restaurant = await DicodingRestaurantSource.detailRestaurant(url.id);
     let isFavorite = await FavoriteRestaurantIdb.getRestaurant(restaurant.id);
     const {customerReviews} = restaurant;
-    const $reviewList = document.querySelector('.detail__review-list');
-    const $favoriteIcon = document.querySelector('#favorite-icon');
-    const $favorite = document.querySelector('.favorite');
-    const $reviewForm = document.querySelector('.detail__review-form');
 
     document.querySelector('.detail__wrapper').outerHTML = `
       <detail-content
         restaurant='${JSON.stringify(restaurant)}'
       ></detail-content>`;
 
+    const $reviewList = document.querySelector('.detail__review-list');
     $reviewList.innerHTML = '';
     customerReviews.forEach((review) => {
       $reviewList.innerHTML += `
@@ -33,10 +30,11 @@ const RestaurantDetail = {
         ></review-item>`;
     });
 
+    const $favorite = document.querySelector('.favorite');
+    const $favoriteIcon = document.querySelector('#favorite-icon');
     if (isFavorite) {
       $favoriteIcon.classList.add('active');
     }
-
     $favorite.addEventListener('click', () => {
       if (isFavorite) {
         FavoriteRestaurantIdb.deleteRestaurant(restaurant.id);
@@ -47,6 +45,7 @@ const RestaurantDetail = {
       isFavorite = !isFavorite;
     });
 
+    const $reviewForm = document.querySelector('.detail__review-form');
     $reviewForm.addEventListener('submit', async (event) => {
       event.preventDefault();
       const formValue = {

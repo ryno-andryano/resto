@@ -12,6 +12,8 @@ import './view/components/review-item-skeleton';
 import './view/components/review-item';
 import './view/components/detail-content-skeleton';
 import './view/components/detail-content';
+import './view/components/action-menu';
+import './view/components/add-review-form';
 import './view/components/explore-component';
 import './view/components/favorite-component';
 import './view/components/detail-component';

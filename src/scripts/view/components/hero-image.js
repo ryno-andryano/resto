@@ -5,7 +5,7 @@ class HeroImage extends HTMLElement {
 
   render() {
     this.outerHTML = `
-      <section class="hero-section" title="Hero Image">
+      <section class="hero-section">
         <h2 class="hero-section__caption">
           Find The Most Popular<br /><u>Restaurants</u> Near You
         </h2>
