@@ -250,6 +250,10 @@ html {
       grid-template-columns: 1fr;
       margin-bottom: 28px;
 
+      &--empty {
+        text-align: center;
+      }
+
       .restaurant-item {
         background-color: $lighter;
         position: relative;

@@ -11,7 +11,7 @@ const FavoriteRestaurants = {
 
     if (restaurants == '') {
       $restaurantList.outerHTML =
-        '<p style="text-align: center">No restaurants found.</p>';
+        '<p class="restaurant__list--empty">No restaurants found.</p>';
     } else {
       $restaurantList.innerHTML = '';
       restaurants.forEach((restaurant) => {

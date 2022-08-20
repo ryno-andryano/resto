@@ -31,9 +31,9 @@ class HeaderComponent extends HTMLElement {
           </button>
 
           <nav class="header__nav">
-            <a href="#/home">Home</a>
-            <a href="#/favorite">Favorite</a>
-            <a href="https://github.com/ryno-andryano" target="_blank"
+            <a id="nav-home" href="#/home">Home</a>
+            <a id="nav-favorite" href="#/favorite">Favorite</a>
+            <a id="nav-about" href="https://github.com/ryno-andryano" target="_blank"
               >About Us</a
             >
           </nav>
