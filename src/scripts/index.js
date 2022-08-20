@@ -8,6 +8,7 @@ import './view/components/hero-image';
 import './view/components/footer-component';
 import './view/components/restaurant-item-skeleton';
 import './view/components/restaurant-item';
+import './view/components/food-facts';
 import './view/components/review-item-skeleton';
 import './view/components/review-item';
 import './view/components/detail-content-skeleton';

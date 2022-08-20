@@ -4,10 +4,15 @@ class HeroImage extends HTMLElement {
   }
 
   render() {
-    this.outerHTML = `
+    this.outerHTML = ` 
       <section class="hero-section">
+        <img
+          class="hero-section__image"
+          src="./images/hero-image.jpg"
+          alt="Hero Image"
+        />
         <h2 class="hero-section__caption">
-          Find The Most Popular<br /><u>Restaurants</u> Near You
+          Find The Most Popular<br />Restaurants Near You
         </h2>
       </section>`;
   }
