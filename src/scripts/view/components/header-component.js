@@ -9,7 +9,7 @@ class HeaderComponent extends HTMLElement {
         <div class="header__inner">
           <h1 class="header__logo">
             <a href="/">
-              <img src="./images/logo-long.png" alt="RESTO" />
+              <img src="./icons/logo-long.png" alt="RESTO" />
             </a>
           </h1>
 

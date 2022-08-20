@@ -6,11 +6,17 @@ class FoodFacts extends HTMLElement {
   render() {
     this.outerHTML = `
       <section class="food-facts">
-        <img
-          class="food-facts__background"
-          src="./images/pattern.jpg"
-          alt="background"
-        />
+        <picture>
+          <source
+            media="(max-width: 600px)"
+            srcset="./images/pattern-small.jpg"
+          />
+          <img
+            class="food-facts__background"
+            src="./images/pattern-large.jpg"
+            alt="background"
+          />
+        </picture>
         <button
           class="food-facts__shuffle-button"
           title="Shuffle Fact"
