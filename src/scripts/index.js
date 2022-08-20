@@ -20,6 +20,8 @@ import './view/components/add-review-form';
 import './view/components/explore-component';
 import './view/components/favorite-component';
 import './view/components/detail-component';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 import App from './view/app';
 import swRegister from './utils/sw-register';
 

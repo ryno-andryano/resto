@@ -10,9 +10,10 @@ class RestaurantItem extends HTMLElement {
     this.outerHTML = `
       <li class="restaurant-item">
         <img
-          src="${CONFIG.BASE_IMAGE_URL}small/${pictureId}"
+          src="./icons/placeholder.png"
+          data-src="${CONFIG.BASE_IMAGE_URL}small/${pictureId}"
           alt="${name}'s Ambiance"
-          class="restaurant-item__picture"
+          class="restaurant-item__picture lazyload"
         />
         <div class="restaurant-item__rating">
           <i class="material-icons restaurant-item__rating-icon">star_rate</i>
