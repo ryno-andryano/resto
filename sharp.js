@@ -20,7 +20,7 @@ fs.readdirSync(target).forEach((image) => {
     );
 
   sharp(`${target}/${image}`)
-    .resize(400)
+    .resize(480)
     .toFile(
       path.resolve(
         __dirname,
