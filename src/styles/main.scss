@@ -3,7 +3,7 @@
 $primary: #ffd438;
 $dark: #292b2f;
 $darker: #211f1f;
-$grey: #777777;
+$grey: #464646;
 $light: #fafafa;
 $lighter: #ffffff;
 
@@ -335,6 +335,7 @@ html {
   }
 
   .food-facts {
+    background-color: $primary;
     box-shadow: 0 2px 4px 2px rgba(0, 0, 0, 0.15);
     background-size: cover;
     border-radius: 20px;
@@ -344,18 +345,6 @@ html {
     justify-content: center;
     text-align: center;
     position: relative;
-
-    picture {
-      width: 100%;
-      height: 100%;
-    }
-
-    &__background {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-      border-radius: 20px;
-    }
 
     &__shuffle-button {
       position: absolute;
@@ -627,10 +616,6 @@ html {
     .food-facts {
       height: 180px;
 
-      &__background {
-        height: 180px;
-      }
-
       &__shuffle-button {
         top: 8px;
         right: 8px;
@@ -799,10 +784,6 @@ html {
 
     .food-facts {
       height: 220px;
-
-      &__background {
-        height: 220px;
-      }
 
       &__shuffle-button {
         top: 10px;

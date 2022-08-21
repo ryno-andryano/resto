@@ -8,14 +8,24 @@ class HeroImage extends HTMLElement {
       <section class="hero-section">
         <picture>
           <source
-            media="(max-width: 440px)"
+            media="(max-width: 400px)"
+            type="image/webp"
+            srcset="./images/hero-image-small.webp"
+          />
+          <source
+            media="(max-width: 400px)"
             type="image/jpeg"
-            srcset="./images/responsive/hero-image-small.jpg"
+            srcset="./images/hero-image-small.jpg"
+          />
+          <source
+            media="(max-width: 720px)"
+            type="image/webp"
+            srcset="./images/hero-image-medium.webp"
           />
           <source
             media="(max-width: 720px)"
             type="image/jpeg"
-            srcset="./images/responsive/hero-image-medium.jpg"
+            srcset="./images/hero-image-medium.jpg"
           />
           <source type="image/webp" srcset="./images/hero-image.webp" />
           <source type="image/jpeg" srcset="./images/hero-image.jpg" />

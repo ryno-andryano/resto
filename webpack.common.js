@@ -2,6 +2,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 const ImageminMozjpeg = require('imagemin-mozjpeg');
 const TerserPlugin = require('terser-webpack-plugin');
@@ -39,6 +40,7 @@ module.exports = {
   },
 
   plugins: [
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: path.resolve(__dirname, 'src/templates/index.html'),
@@ -48,9 +50,9 @@ module.exports = {
         {
           from: path.resolve(__dirname, 'src/public'),
           to: path.resolve(__dirname, 'dist'),
-          // globOptions: {
-          //   ignore: ['**/images/**'],
-          // },
+          globOptions: {
+            ignore: ['**/master/**'],
+          },
         },
       ],
     }),
@@ -85,8 +87,8 @@ module.exports = {
     usedExports: true,
     splitChunks: {
       chunks: 'all',
-      minSize: 60000,
-      maxSize: 290000,
+      minSize: 30000,
+      maxSize: 80000,
       minChunks: 1,
       maxAsyncRequests: 30,
       maxInitialRequests: 30,
