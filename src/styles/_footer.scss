@@ -1,0 +1,18 @@
+.footer {
+  background-color: $dark;
+  color: $primary;
+  width: 100%;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__inner {
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 640px) {
+}
+
+@media screen and (min-width: 1200px) {
+}

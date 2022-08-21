@@ -1,0 +1,57 @@
+.hero-section {
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  picture {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__image {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    filter: brightness(30%);
+  }
+
+  &__caption {
+    position: absolute;
+    color: $light;
+    font-weight: 500;
+    font-size: 7vmin;
+    line-height: 125%;
+    margin: 0 20px;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .hero-section {
+    height: 360px;
+
+    &__image {
+      height: 360px;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .hero-section {
+    height: 400px;
+
+    &__image {
+      height: 400px;
+    }
+
+    &__caption {
+      font-size: 9vmin;
+    }
+  }
+}

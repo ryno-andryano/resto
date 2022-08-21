@@ -1,7 +1,6 @@
 import 'regenerator-runtime';
 import 'material-icons/iconfont/filled.css';
 import '../styles/main.scss';
-import '../styles/placeholder.scss';
 import 'lazysizes';
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 import './view/component-index';
