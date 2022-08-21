@@ -60,6 +60,7 @@ module.exports = {
       swDest: './sw.bundle.js',
     }),
     new ImageminWebpackPlugin({
+      test: 'src/public/images/**',
       plugins: [
         ImageminMozjpeg({
           quality: 50,
@@ -70,7 +71,7 @@ module.exports = {
     new ImageminWebpWebpackPlugin({
       config: [
         {
-          test: /\.(jpe?g|png)/,
+          test: /\.(jpe?g)/,
           options: {
             quality: 50,
           },
