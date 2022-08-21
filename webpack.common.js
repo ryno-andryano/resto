@@ -4,6 +4,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 const ImageminMozjpeg = require('imagemin-mozjpeg');
 const TerserPlugin = require('terser-webpack-plugin');
+const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin');
 const BundleAnalyzerPlugin =
   require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const path = require('path');
@@ -13,11 +14,13 @@ module.exports = {
     app: path.resolve(__dirname, 'src/scripts/index.js'),
     sw: path.resolve(__dirname, 'src/scripts/sw.js'),
   },
+
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
+
   module: {
     rules: [
       {
@@ -34,6 +37,7 @@ module.exports = {
       },
     ],
   },
+
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
@@ -44,9 +48,9 @@ module.exports = {
         {
           from: path.resolve(__dirname, 'src/public'),
           to: path.resolve(__dirname, 'dist'),
-          globOptions: {
-            ignore: ['**/images/**'],
-          },
+          // globOptions: {
+          //   ignore: ['**/images/**'],
+          // },
         },
       ],
     }),
@@ -58,11 +62,24 @@ module.exports = {
         }),
       ],
     }),
+    new ImageminWebpWebpackPlugin({
+      config: [
+        {
+          test: /\.(jpe?g|png)/,
+          options: {
+            quality: 50,
+          },
+        },
+      ],
+      overrideExtension: true,
+    }),
     new BundleAnalyzerPlugin(),
   ],
+
   optimization: {
     minimize: true,
     minimizer: [new TerserPlugin()],
+    usedExports: true,
     splitChunks: {
       chunks: 'all',
       minSize: 60000,

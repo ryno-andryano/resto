@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const target = path.resolve(__dirname, 'src/public/images');
-const destination = path.resolve(__dirname, 'dist/images');
+const destination = path.resolve(__dirname, 'dist/images/responsive');
 
 if (!fs.existsSync(destination)) {
   fs.mkdirSync(destination);
@@ -11,16 +11,16 @@ if (!fs.existsSync(destination)) {
 
 fs.readdirSync(target).forEach((image) => {
   sharp(`${target}/${image}`)
-    .resize(800)
+    .resize(600)
     .toFile(
       path.resolve(
         __dirname,
-        `${destination}/${image.split('.').slice(0, -1).join('.')}-large.jpg`,
+        `${destination}/${image.split('.').slice(0, -1).join('.')}-medium.jpg`,
       ),
     );
 
   sharp(`${target}/${image}`)
-    .resize(480)
+    .resize(400)
     .toFile(
       path.resolve(
         __dirname,

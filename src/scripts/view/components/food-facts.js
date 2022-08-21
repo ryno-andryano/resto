@@ -8,12 +8,20 @@ class FoodFacts extends HTMLElement {
       <section class="food-facts">
         <picture>
           <source
-            media="(max-width: 600px)"
-            srcset="./images/pattern-small.jpg"
+            media="(max-width: 440px)"
+            type="image/jpeg"
+            srcset="./images/responsive/pattern-small.jpg"
           />
+          <source
+            media="(max-width: 720px)"
+            type="image/jpeg"
+            srcset="./images/responsive/pattern-medium.jpg"
+          />
+          <source type="image/webp" srcset="./images/pattern.webp" />
+          <source type="image/jpeg" srcset="./images/pattern.jpg" />
           <img
             class="food-facts__background"
-            src="./images/pattern-large.jpg"
+            src="./images/pattern.jpg"
             alt="background"
           />
         </picture>
